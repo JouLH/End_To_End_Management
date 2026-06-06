@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End To End Management | Soluciones de TI y Seguridad</title>
+    <meta name="description" content="End To End Management ofrece soluciones empresariales, administración de sistemas, nube, seguridad y software con más de 20 años de experiencia.">
+    <style>
+        /* ==========================================================================
+           VARIABLES & RESET
+           ========================================================================== */
+        :root {
+            --primary-color: #0A192F; /* Azul profundo corporativo */
+            --secondary-color: #0066FF; /* Azul tecnológico */
+            --accent-color: #00E5FF; /* Cyan de acento */
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+            --bg-light: #F8FAFC;
+            --bg-white: #FFFFFF;
+            --portal-bg: #F1F5F9; /* Fondo gris claro para vista SaaS */
+            --portal-border: #E2E8F0;
+            --transition: all 0.3s ease-in-out;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --border-radius: 8px;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: none;
+            outline: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==========================================================================
+           TYPOGRAPHY & UTILITIES
+           ========================================================================== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-color);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--bg-white);
+            box-shadow: 0 4px 14px 0 rgba(0, 102, 255, 0.39);
+        }
+
+        .btn-primary:hover {
+            background-color: #0052cc;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--bg-white);
+            border: 2px solid var(--bg-white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--bg-white);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-dark {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+
+        .btn-outline-dark:hover {
+            background-color: var(--secondary-color);
+            color: var(--bg-white);
+        }
+
+        .section-padding {
+            padding: 6rem 0;
+        }
+
+        /* ==========================================================================
+           PLACEHOLDER CONTENEDORES DE IMÁGENES & LOGOS
+           ========================================================================== */
+        .image-placeholder-container {
+            position: relative;
+            background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+            border: none;
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            color: #475569;
+            font-size: 0.95rem;
+            font-weight: 500;
+            min-height: 250px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .image-placeholder-container:hover {
+            color: var(--secondary-color);
+        }
+
+        .image-placeholder-container svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.75rem;
+            fill: currentColor;
+            opacity: 0.7;
+        }
+
+        .image-placeholder-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: calc(var(--border-radius) - 2px);
+        }
+
+        .logo-img-container {
+            width: auto;
+            height: 45px;
+            min-width: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-img-container img {
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+        }
+
+        header.scrolled .logo-img-container {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ==========================================================================
+           HEADER & NAVIGATION (MAIN VIEW)
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 20px 0;
+            background-color: transparent;
+        }
+
+        header.scrolled {
+            background-color: rgba(10, 25, 47, 0.98); 
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        header.scrolled .nav-links a {
+            color: var(--bg-white);
+        }
+
+        header.scrolled .hamburger span {
+            background-color: var(--bg-white);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-text {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--bg-white);
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        header.scrolled .logo-text {
+            color: var(--bg-white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.75rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--bg-white);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after, .nav-links a.active-link::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--bg-white);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.96) 0%, rgba(0, 66, 170, 0.9) 100%);
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+            padding-top: 100px;
+            padding-bottom: 6rem;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(4px);
+            color: var(--accent-color);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 4.5vw, 3.8rem);
+            color: var(--bg-white);
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-image-wrapper .image-placeholder-container {
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ==========================================================================
+           ABOUT US (NOSOTROS)
+           ========================================================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4.5rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            padding: 1.5rem;
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .about-image-wrapper .image-placeholder-container {
+            min-height: 380px;
+        }
+
+        /* ==========================================================================
+           SERVICES (MAIN LANDING)
+           ========================================================================== */
+        .services {
+            background-color: var(--bg-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            background: var(--bg-white);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(0, 102, 255, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .service-icon svg {
+            width: 26px;
+            height: 26px;
+            fill: currentColor;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            text-transform: capitalize;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-card-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 1rem;
+        }
+
+        .service-link {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .service-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* ==========================================================================
+           INDEPENDENT SAAS VIEW: PORTAL DE SOLUCIONES TI
+           ========================================================================== */
+        #portal-view {
+            background-color: var(--portal-bg);
+            min-height: 100vh;
+            padding-top: 80px; /* Space for the header */
+            display: flex;
+        }
+
+        /* Portal Sidebar */
+        .portal-sidebar {
+            width: 260px;
+            background: var(--bg-white);
+            border-right: 1px solid var(--portal-border);
+            height: calc(100vh - 80px);
+            position: fixed;
+            top: 80px;
+            left: 0;
+            overflow-y: auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .portal-sidebar-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .portal-nav {
+            list-style: none;
+        }
+
+        .portal-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .portal-nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 6px;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .portal-nav a:hover, .portal-nav a.active {
+            background: rgba(0, 102, 255, 0.08);
+            color: var(--secondary-color);
+        }
+
+        .portal-nav svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        .portal-back-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .portal-back-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Portal Main Content */
+        .portal-main {
+            flex-grow: 1;
+            margin-left: 260px; /* offset sidebar */
+            padding: 3rem 4rem;
+            max-width: 1400px;
+        }
+
+        .portal-header-area {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--portal-border);
+            padding-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .portal-header-area h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .portal-header-area p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .mp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .mp-card {
+            background: var(--bg-white);
+            border: 1px solid var(--portal-border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .mp-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: #CBD5E1;
+            transform: translateY(-3px);
+        }
+
+        .mp-card.highlight {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
+        }
+
+        .mp-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #F1F5F9;
+        }
+
+        .mp-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .mp-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .mp-header h3 {
+            font-size: 1.25rem;
+            margin: 0;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        .mp-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .mp-config-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .mp-config-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mp-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .mp-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        .mp-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .mp-price-display {
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid #F1F5F9;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .mp-price-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .mp-price-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .mp-price-value span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            margin-top: 1.5rem;
+            background-color: var(--bg-light);
+            color: var(--primary-color);
+            border: 1px solid #CBD5E1;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-add-cart:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        /* Cart Float over Portal */
+        .cart-float-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cart-float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid var(--bg-white);
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -450px; 
+            width: 100%;
+            max-width: 450px;
+            height: 100vh;
+            background-color: var(--bg-white);
+            box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+            z-index: 1002;
+            transition: right 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.8rem;
+        }
+
+        .cart-body {
+            flex-grow: 1;
+            padding: 25px;
+            overflow-y: auto;
+            background-color: var(--portal-bg);
+        }
+
+        .cart-item {
+            background: var(--bg-white);
+            border: 1px solid var(--portal-border);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cart-item-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            padding-right: 20px;
+        }
+
+        .cart-item-details {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #F1F5F9;
+            padding-top: 10px;
+        }
+
+        .cart-qty-ctrl {
+            display: flex;
+            align-items: center;
+            border: 1px solid #CBD5E1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .cart-qty-ctrl button {
+            background: #F1F5F9;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .cart-qty-ctrl button:hover {
+            background: #E2E8F0;
+        }
+
+        .cart-qty-ctrl input {
+            width: 40px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid #CBD5E1;
+            border-right: 1px solid #CBD5E1;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .cart-item-price {
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .btn-remove-item {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: #94A3B8;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        
+        .btn-remove-item:hover {
+            color: #EF4444;
+        }
+
+        .cart-footer {
+            padding: 25px;
+            border-top: 1px solid var(--portal-border);
+            background-color: var(--bg-white);
+        }
+
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .btn-checkout {
+            width: 100%;
+            background-color: #10B981; 
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-checkout:hover {
+            background-color: #059669;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.6);
+            z-index: 1001;
+            display: none;
+            backdrop-filter: blur(3px);
+        }
+        .cart-overlay.show {
+            display: block;
+        }
+
+        /* Order Modal */
+        .order-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: white;
+            width: 90%;
+            max-width: 550px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            z-index: 1003;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .order-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .order-modal-header {
+            background-color: #10B981;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .order-modal-header svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .order-modal-body {
+            padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
+            background: var(--bg-light);
+        }
+
+        .order-meta {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #CBD5E1;
+        }
+
+        .order-meta h4 {
+            color: var(--text-dark);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .order-meta p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .order-summary-item {
+            background: var(--bg-white);
+            padding: 15px;
+            border: 1px solid var(--portal-border);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .order-summary-item strong {
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+
+        .order-modal-footer {
+            padding: 25px;
+            text-align: center;
+            border-top: 1px solid var(--portal-border);
+            background: var(--bg-white);
+        }
+
+        .btn-close-modal {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-close-modal:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* ==========================================================================
+           PARTNERS, TALENTS, CONTACT (Landing)
+           ========================================================================== */
+        .partners-clients { background-color: var(--bg-light); }
+        .brand-block { margin-bottom: 4rem; }
+        .brand-block:last-child { margin-bottom: 0; }
+        .brand-block h3 {
+            font-size: 1.5rem; margin-bottom: 2rem; text-align: center;
+            color: var(--text-light); font-weight: 600; position: relative;
+        }
+        .brand-block h3::after {
+            content: ''; display: block; width: 50px; height: 3px;
+            background: var(--secondary-color); margin: 0.5rem auto 0; border-radius: 2px;
+        }
+        .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
+        .logo-grid .image-placeholder-container { min-height: 100px; padding: 1rem; background: var(--bg-white); border-radius: var(--border-radius); }
+
+        .talents { background-color: var(--bg-white); }
+        .talents-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: center; }
+        .talent-image-wrapper .image-placeholder-container { min-height: 400px; }
+        .talent-badge-generation {
+            display: inline-block; background: rgba(0, 102, 255, 0.1); color: var(--secondary-color);
+            padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700;
+            margin-bottom: 1rem; text-transform: uppercase;
+        }
+        .talents-content h2 { margin-bottom: 1.5rem; }
+        .talents-content p { color: var(--text-light); font-size: 1.05rem; margin-bottom: 1.5rem; }
+        .talent-callout {
+            background-color: var(--bg-light); border-left: 4px solid var(--accent-color);
+            padding: 1.5rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; margin-bottom: 2rem;
+        }
+        .talent-callout h4 { font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .talent-callout p { font-size: 0.95rem; margin-bottom: 0; color: var(--text-dark); }
+        .talent-email-box { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--secondary-color); font-size: 1.1rem; }
+
+        .contact-section { background-color: var(--bg-light); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-info h2 { margin-bottom: 1rem; }
+        .contact-info > p { color: var(--text-light); margin-bottom: 2.5rem; font-size: 1.05rem; }
+        .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 1.75rem; }
+        .info-icon {
+            width: 42px; height: 42px; background: rgba(0, 102, 255, 0.08); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;
+        }
+        .info-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; }
+        .info-text h4 { font-size: 1rem; margin-bottom: 0.25rem; color: var(--primary-color); font-weight: 600; }
+        .info-text p { color: var(--text-light); font-size: 0.95rem; }
+        .contact-form { background: var(--bg-white); padding: 3rem 2.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-md); border: 1px solid rgba(0,0,0,0.02); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary-color); font-size: 0.875rem; }
+        .form-control { width: 100%; padding: 12px 15px; border: 1px solid #CBD5E1; border-radius: 6px; font-family: inherit; font-size: 1rem; transition: var(--transition); background: var(--bg-light); }
+        .form-control:focus { outline: none; border-color: var(--secondary-color); background-color: var(--bg-white); box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15); }
+        textarea.form-control { resize: vertical; min-height: 130px; }
+
+        footer { background-color: #050d18; color: rgba(255, 255, 255, 0.65); padding: 4rem 0 1.5rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem; margin-bottom: 3.5rem; }
+        .footer-about .logo-group { margin-bottom: 1.25rem; }
+        .footer-about p { max-width: 400px; font-size: 0.95rem; line-height: 1.6; }
+        .footer-links h4 { color: var(--bg-white); margin-bottom: 1.5rem; font-size: 1.05rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .footer-links ul li { margin-bottom: 0.85rem; }
+        .footer-links a { transition: var(--transition); font-size: 0.95rem; }
+        .footer-links a:hover { color: var(--accent-color); padding-left: 4px; }
+        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.85rem; }
+        .privacy-link { color: var(--accent-color); margin-top: 0.5rem; display: inline-block; }
+
+        /* ==========================================================================
+           ANIMATIONS
+           ========================================================================== */
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ==========================================================================
+           RESPONSIVE DESIGN
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .hero-grid, .about-grid, .talents-grid, .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+            .hero { text-align: center; min-height: auto; }
+            .hero-btns { justify-content: center; }
+            .hero-image-wrapper, .about-image-wrapper, .talent-image-wrapper { max-width: 550px; margin: 0 auto; width: 100%; }
+            .about-image-wrapper, .talent-image-wrapper { order: -1; }
+            
+            /* Portal Responsive */
+            .portal-sidebar { display: none; /* Hide sidebar on tablet/mobile */ }
+            .portal-main { margin-left: 0; padding: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--bg-white);
+                flex-direction: column; padding: 2.5rem 0; gap: 1.75rem; box-shadow: var(--shadow-md);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease-in-out;
+            }
+            .nav-links.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            .nav-links a { color: var(--primary-color); font-size: 1.05rem; width: 100%; text-align: center; padding: 0.5rem 0; }
+            header.scrolled .nav-links a { color: var(--primary-color); }
+            .hamburger { display: flex; }
+            header { background-color: var(--primary-color); padding: 15px 0; }
+            header.scrolled { background-color: var(--primary-color); }
+            header:not(.scrolled) .hamburger span { background-color: var(--bg-white); }
+            header.scrolled .logo-text, header:not(.scrolled) .logo-text { color: var(--bg-white); }
+            .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            h2 { font-size: 2rem; }
+            
+            .cart-sidebar { max-width: 100%; right: -100%; }
+            .portal-main { padding: 1rem; }
+            .portal-header-area h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container nav-container">
+            <div class="logo-group">
+                <div class="logo-img-container">
+                    <img src="img/logo.png" alt="[Logo Empresa]" id="logo-header-img">
+                </div>
+                <span class="logo-text">End To End Management</span>
+            </div>
+            
+            <nav class="nav-links" id="main-nav">
+                <a onclick="openLanding('#hero')" id="nav-inicio">Inicio</a>
+                <a onclick="openLanding('#nosotros')" id="nav-nosotros">Nosotros</a>
+                <a onclick="openLanding('#servicios')" id="nav-servicios">Servicios</a>
+                <a onclick="openPortal()" id="nav-portal" style="color: var(--accent-color); font-weight: 700;">Centro de Soluciones TI</a>
+                <a onclick="openLanding('#socios-clientes')" id="nav-socios">Socios y Clientes</a>
+                <a onclick="openLanding('#talento')" id="nav-talento">Talento Joven</a>
+                <a onclick="openLanding('#contacto')" id="nav-contacto">Contáctanos</a>
+            </nav>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div id="landing-view">
+        <section id="hero" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content fade-up">
+                    <div class="hero-badge">Innovando la Tecnología</div>
+                    <h1>Transformación Digital <br><span>De Principio a Fin</span></h1>
+                    <p>Optimizamos, administramos y protegemos la infraestructura tecnológica de su empresa con más de 20 años de experiencia comprobada en el mercado global.</p>
+                    <div class="hero-btns">
+                        <a href="#servicios" class="btn btn-primary">Conoce nuestros servicios</a>
+                        <a onclick="openPortal()" class="btn btn-outline">Centro de Soluciones</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper fade-up">
+                    <div class="image-placeholder-container">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span>[Imagen Principal del Hero]</span>
+                        <small style="display:block; margin-top:5px; opacity:0.6;">Tamaño sugerido: 600x500px</small>
+                        <img src="img/principal_hero.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="section-padding">
+            <div class="container about-grid">
+                <div class="about-text fade-up">
+                    <h2>¿Quiénes Somos?</h2>
+                    <p>En <strong>End To End Management</strong> somos una organización que cuenta con personal altamente calificado, sumando <strong>más de 20 años de experiencia</strong> en el mercado de la administración en sistemas de información y software de seguridad, implementación de nuevas tecnologías y migración de servicios de misión crítica.</p>
+                    <p>Hemos tenido la invaluable oportunidad de participar activamente en complejos proyectos nacionales e internacionales. Esto nos aporta una visión global profunda sobre las tendencias vigentes de la tecnología en el mundo, así como de las mejores y más eficientes prácticas de negocio.</p>
+                    <p>Contamos con ingenieros y especialistas certificados rigurosamente en tecnología de punta para respaldar con confianza cada requerimiento operativo.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">20+ Años</div>
+                            <div class="stat-label">Experiencia en el Mercado</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Personal Especializado y Certificado</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image-wrapper fade-up">
+                    <div class="image-placeholder-container">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm14 10v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <span>[Imagen Sección Nosotros]</span>
+                        <small style="display:block; margin-top:5px; opacity:0.6;">Tamaño sugerido: 500x450px</small>
+                        <img src="img/seccion.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="section-padding services">
+            <div class="container">
+                <div class="section-title fade-up">
+                    <h2>Nuestras Soluciones Corporativas</h2>
+                    <p>Ofrecemos un ecosistema de servicios modulares de TI orientados a mejorar la disponibilidad de la información y la resiliencia operativa.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                        <h3>Facturación</h3>
+                        <p>Sistemas integrados para la emisión de comprobantes fiscales digitales de acuerdo a la normatividad vigente.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-facturacion')" class="btn-outline-dark">Configurar en línea</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <h3>Portal de Proveedores</h3>
+                        <p>Estructura web colaborativa centralizada para agilizar entregas, cotizaciones y la cadena de suministro externa.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-portal')" class="btn-outline-dark">Configurar en línea</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                        <h3>ERP</h3>
+                        <p>Planificación de recursos empresariales para unificar las finanzas, compras y planeación en una sola suite central.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal()" class="btn-outline-dark">Ver Catálogo</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+                        <h3>Publicación de Aplicaciones</h3>
+                        <p>Acceso seguro y optimizado a las herramientas internas corporativas desde cualquier dispositivo remoto.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-cloud')" class="btn-outline-dark">Instancias Cloud</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+                        <h3>FileShare</h3>
+                        <p>Almacenamiento corporativo compartido de documentos con control avanzado de permisos y sincronización.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-m365')" class="btn-outline-dark">Storage & Office</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                        <h3>DRP como Servicio</h3>
+                        <p>Planes robustos de Recuperación ante Desastres para asegurar que su negocio se mantenga operando ante contingencias.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-backup')" class="btn-outline-dark">Planes BaaS/DRP</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+                        <h3>Nube de End To End</h3>
+                        <p>Infraestructura Cloud privada adaptada a las cargas específicas de trabajo de su organización, ágil y escalable.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-cloud')" class="btn-outline-dark">Configurar Instancia</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+                        <h3>Contabilidad Electrónica</h3>
+                        <p>Automatización de registros contables y generación de archivos XML requeridos por las autoridades hacendarias.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-facturacion')" class="btn-outline-dark">Soluciones Fiscales</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></div>
+                        <h3>Portal de Clientes</h3>
+                        <p>Entorno digital transparente para que sus usuarios consulten estados de cuenta, soportes y servicios activos.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-portal')" class="btn-outline-dark">Configurar en línea</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                        <h3>Soporte Técnico Especializado</h3>
+                        <p>Monitoreo y administración avanzada de arquitecturas tecnológicas complejas con estándares internacionales ISO.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-servicedesk')" class="btn-outline-dark">Mesa de Servicio</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+                        <h3>Respaldo de Información</h3>
+                        <p>Políticas de backup periódicas automáticas cifradas que resguardan la data ante pérdidas humanas o técnicas.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-backup')" class="btn-outline-dark">Configurar BaaS</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/></svg></div>
+                        <h3>Administración DBA</h3>
+                        <p>Administración y tuning experto de bases de datos para garantizar altas velocidades de respuesta y queries óptimos.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-dba')" class="btn-outline-dark">Cotizar Servicio</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                        <h3>Soporte PC</h3>
+                        <p>Mantenimiento correctivo, preventivo y mesa de ayuda remota para los equipos terminales de sus colaboradores.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-soportepc')" class="btn-outline-dark">Cobertura Endpoints</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+                        <h3>Redes y Plataformas</h3>
+                        <p>Gestión operativa avanzada de sistemas operativos, configuración VLAN, SSH, hardware Cisco y entornos virtuales.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-vpn')" class="btn-outline-dark">Configurar Red/VPN</a>
+                        </div>
+                    </div>
+
+                    <div class="service-card fade-up">
+                        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                        <h3>Seguridad SOC</h3>
+                        <p>Instalación de firewalls, software antimalware empresarial, auditorías y perímetros lógicos de resguardo ISO 27001.</p>
+                        <div class="service-card-actions">
+                            <a href="#contacto" class="service-link">Saber más &rarr;</a>
+                            <a onclick="openPortal('conf-cyber')" class="btn-outline-dark">Ciberseguridad</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="socios-clientes" class="section-padding partners-clients">
+            <div class="container">
+                <div class="section-title fade-up">
+                    <h2>Alianzas y Confianza Comercial</h2>
+                    <p>Nuestra red de socios tecnológicos estratégicos y empresas que confían diariamente en la calidad de nuestra gestión y soluciones de TI.</p>
+                </div>
+
+                <div class="brand-block fade-up">
+                    <h3>Nuestros Socios Tecnológicos</h3>
+                    <div class="logo-grid">
+                        <div class="image-placeholder-container"><img src="img/Oracle_logo.png" alt=""></div>
+                        <div class="image-placeholder-container"><img src="img/dell.png" alt=""></div>
+                        <div class="image-placeholder-container"><img src="img/microsoft_new_logo.png" alt=""></div>
+                        <div class="image-placeholder-container"><img src="img/vmware.png" alt=""></div>
+                    </div>
+                </div>
+
+                <div class="brand-block fade-up" style="margin-top: 5rem;">
+                    <h3>Clientes que Confían en Nosotros</h3>
+                    <div class="logo-grid">
+                        <div class="image-placeholder-container"><img src="img/banorte.png" alt=""></div>
+                        <div class="image-placeholder-container"><img src="img/eglobal.png" alt=""></div>
+                        <div class="image-placeholder-container"><img src="img/senda.png" alt=""></div>
+                        <div class="image-placeholder-container"><img src="img/royal.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="talento" class="section-padding talents">
+            <div class="container talents-grid">
+                <div class="talent-image-wrapper fade-up">
+                    <div class="image-placeholder-container">
+                        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                        <small style="display:block; margin-top:5px; opacity:0.6;">Tamaño sugerido: 550x500px</small>
+                        <img src="img/talentos.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="talents-content fade-up">
+                    <span class="talent-badge-generation">Convocatoria Activa</span>
+                    <h2>En End To End Management creemos en el talento joven</h2>
+                    <p>En <strong>END TO END Management</strong>, creemos firmemente en el valioso potencial del talento joven mexicano y mantenemos un compromiso constante en descubrir y capacitar a los líderes tecnológicos del futuro.</p>
+                    
+                    <div class="talent-callout">
+                        <h4>¡Estamos en la búsqueda de la 25° Generación de Talentos Jóvenes!</h4>
+                        <p>Únete a nuestro riguroso programa de preselección corporativo y sé parte activa de nuestra misión estratégica de impulsar y consolidar el potencial de la juventud mexicana en tecnologías de punta.</p>
+                    </div>
+
+                    <p style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">CONOCE LO QUE ESTAMOS BUSCANDO. SI TE INTERESA PARTICIPAR ENVÍA TU CV A:</p>
+                    <div class="talent-email-box">
+                        <svg style="width:24px; height:24px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:hcm@endtoend.com.mx">hcm@endtoend.com.mx</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section-padding contact-section">
+            <div class="container contact-grid">
+                <div class="contact-info fade-up">
+                    <h2>Haciendo las cosas diferentes</h2>
+                    <p>En End To End, nuestro objetivo es ayudarlo a lograr sus sueños de éxito. Nos esforzamos por brindar servicios y soluciones plenamente personalizadas que satisfagan con rigor sus necesidades específicas bajo un esquema de socio de negocios de largo plazo.</p>
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                        <div class="info-text">
+                            <h4>Ubicación</h4>
+                            <p>Insurgentes Nte. 64 Torre B 1502, Piso 15, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                        <div class="info-text">
+                            <h4>Número Telefónico</h4>
+                            <p>+52 (55) 5025-4500</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                        <div class="info-text">
+                            <h4>Correo Electrónico Comercial</h4>
+                            <p>comercial@endtoend.com.mx</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form fade-up">
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Mensaje estructurado correctamente. Nos pondremos en contacto a la brevedad.');">
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" class="form-control" placeholder="Ej. Ing. Carlos Mendoza" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico corporativo</label>
+                            <input type="email" id="email" class="form-control" placeholder="nombre@empresa.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresa">Empresa u Organización</label>
+                            <input type="text" id="empresa" class="form-control" placeholder="Nombre de su empresa">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje / Requerimiento Tecnológico</label>
+                            <textarea id="message" class="form-control" placeholder="Describa brevemente las necesidades de infraestructura, seguridad o licenciamiento de su proyecto..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Datos de Contacto</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <div class="logo-group" style="margin-bottom: 1.5rem;">
+                            <div class="logo-img-container"><img src="img/logo.png" alt="[Logo Footer]" id="logo-footer-img"></div>
+                            <span class="logo-text" style="color: #fff;">End To End Management</span>
+                        </div>
+                        <p>Más de 20 años innovando en la administración de sistemas de información, software de seguridad y migración en la nube. Su socio estratégico integral de negocios.</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <h4>Navegación</h4>
+                        <ul>
+                            <li><a onclick="openLanding('#hero')">Inicio</a></li>
+                            <li><a onclick="openLanding('#nosotros')">Nosotros</a></li>
+                            <li><a onclick="openLanding('#servicios')">Servicios</a></li>
+                            <li><a onclick="openPortal()">Centro de Soluciones</a></li>
+                            <li><a onclick="openLanding('#talento')">Talento Joven</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Políticas y Legal</h4>
+                        <ul>
+                            <li><a href="#" class="privacy-link">Consulta nuestro política y aviso de privacidad aquí</a></li>
+                            <li><a href="#">Términos de Servicio</a></li>
+                            <li><a href="#">Garantía de Disponibilidad (SLA) ISO 20000</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 END TO END MANAGEMENT. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="portal-view" style="display:none;">
+        
+        <aside class="portal-sidebar">
+            <button class="portal-back-btn" onclick="openLanding('#hero')">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Volver al Sitio Web
+            </button>
+
+            <div class="portal-sidebar-title">Categorías</div>
+            <ul class="portal-nav">
+                <li><a href="#cat-software"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Software y Gestión</a></li>
+                <li><a href="#cat-cloud"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg> Infraestructura Cloud</a></li>
+                <li><a href="#cat-soporte"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Soporte y Service Desk</a></li>
+                <li><a href="#cat-productividad"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/></svg> Productividad 365</a></li>
+                <li><a href="#cat-redes"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Redes y VPN</a></li>
+                <li><a href="#cat-seguridad"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Ciberseguridad</a></li>
+            </ul>
+        </aside>
+
+        <main class="portal-main">
+            <div class="portal-header-area">
+                <div>
+                    <h1>Centro de Soluciones TI</h1>
+                    <p>Catálogo unificado de servicios empresariales. Configure sus requerimientos y obtenga cotizaciones transparentes en tiempo real.</p>
+                </div>
+            </div>
+
+            <h2 id="cat-software" style="margin-top: 0; margin-bottom: 2rem; color: var(--text-dark); border-bottom: 2px solid var(--portal-border); padding-bottom: 10px;">Software y Gestión</h2>
+            <div class="mp-grid" style="margin-bottom: 4rem;">
+                
+                <div class="mp-card" id="conf-facturacion">
+                    <div class="mp-header">
+                        <div class="mp-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+                        <div><h3>Facturación Electrónica</h3></div>
+                    </div>
+                    <div class="mp-desc">Sistemas integrados para la emisión de CFDI de acuerdo a la normatividad.</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Volumen de Usuarios Operativos</label>
+                        <select id="fact-users" class="mp-select" onchange="calcFacturacion()">
+                            <option value="base">Rango Básico (1 a 10 usuarios)</option>
+                            <option value="inter">Rango Intermedio (11 a 50 usuarios)</option>
+                            <option value="pro">Rango Empresarial (51 a 100 usuarios)</option>
+                            <option value="max">Rango Ilimitado (Más de 100 usuarios)</option>
+                        </select>
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="fact-price-val">800.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Facturación Electrónica', 'fact')">Agregar a la orden</button>
+                </div>
+
+                <div class="mp-card" id="conf-portal">
+                    <div class="mp-header">
+                        <div class="mp-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <div><h3>Portal de Proveedores</h3></div>
+                    </div>
+                    <div class="mp-desc">Estructura web colaborativa centralizada para agilizar la cadena de suministro.</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Nivel de Servicio</label>
+                        <select id="portal-plan" class="mp-select" onchange="calcPortal()">
+                            <option value="basic">Plan Básico (Acceso Estandar)</option>
+                            <option value="pro">Plan Profesional (APIs + Integraciones)</option>
+                            <option value="enterprise">Plan Empresarial (Dedicado + Soporte 24/7)</option>
+                        </select>
+                    </div>
+                    <div class="mp-config-group">
+                        <label>Usuarios Concesionados</label>
+                        <select id="portal-users" class="mp-select" onchange="calcPortal()">
+                            <option value="100">Hasta 100 proveedores</option>
+                            <option value="500">Hasta 500 proveedores</option>
+                            <option value="unlimited">Proveedores Ilimitados</option>
+                        </select>
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="portal-price-val">1500.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Portal de Proveedores', 'portal')">Agregar a la orden</button>
+                </div>
+
+            </div>
+
+            <h2 id="cat-cloud" style="margin-bottom: 2rem; color: var(--text-dark); border-bottom: 2px solid var(--portal-border); padding-bottom: 10px;">Infraestructura Cloud y Datos</h2>
+            <div class="mp-grid" style="margin-bottom: 4rem;">
+                
+                <div class="mp-card" id="conf-cloud">
+                    <div class="mp-header">
+                        <div class="mp-icon"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+                        <div><h3>Instancia ETE Cloud</h3></div>
+                    </div>
+                    <div class="mp-desc">Servidores virtuales escalables con discos NVMe de alto rendimiento.</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Sistema Operativo</label>
+                        <select id="cloud-os" class="mp-select" onchange="calcCloud()">
+                            <option value="linux" selected>Linux (Ubuntu / CentOS)</option>
+                            <option value="windows">Windows Server 2022</option>
+                        </select>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="mp-config-group">
+                            <label>Memoria RAM</label>
+                            <select id="cloud-ram" class="mp-select" onchange="calcCloud()">
+                                <option value="8">8 GB</option><option value="16">16 GB</option>
+                                <option value="24">24 GB</option><option value="32">32 GB</option>
+                                <option value="64">64 GB</option>
+                            </select>
+                        </div>
+                        <div class="mp-config-group">
+                            <label>Virtual CPU</label>
+                            <select id="cloud-vcpu" class="mp-select" onchange="calcCloud()">
+                                <option value="1">1 vCPU</option><option value="2">2 vCPU</option>
+                                <option value="4">4 vCPU</option><option value="8">8 vCPU</option>
+                                <option value="16">16 vCPU</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mp-config-group">
+                        <label>Almacenamiento SSD NVMe</label>
+                        <select id="cloud-disk" class="mp-select" onchange="calcCloud()">
+                            <option value="100">100 GB SSD</option><option value="250">250 GB SSD</option>
+                            <option value="500">500 GB SSD</option><option value="1000">1 TB SSD</option>
+                            <option value="2000">2 TB SSD</option>
+                        </select>
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="cloud-price-val">650.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Instancia ETE Cloud', 'cloud')">Agregar a la orden</button>
+                </div>
+
+                <div class="mp-card" id="conf-backup">
+                    <div class="mp-header">
+                        <div class="mp-icon"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+                        <div><h3>BaaS y DRP</h3></div>
+                    </div>
+                    <div class="mp-desc">Backup as a Service y planes de recuperación ante desastres (Disaster Recovery).</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Espacio Protegido</label>
+                        <select id="baas-space" class="mp-select" onchange="calcBaaS()">
+                            <option value="500">500 GB Almacenamiento</option>
+                            <option value="1000">1 TB Almacenamiento</option>
+                            <option value="5000">5 TB Almacenamiento</option>
+                            <option value="10000">10 TB Almacenamiento</option>
+                        </select>
+                    </div>
+                    <div class="mp-config-group">
+                        <label>Frecuencia de Respaldo</label>
+                        <select id="baas-freq" class="mp-select" onchange="calcBaaS()">
+                            <option value="daily">Diario (Nocturno)</option>
+                            <option value="hourly">Continuo (Cada hora)</option>
+                        </select>
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="baas-price-val">300.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Backup as a Service (BaaS)', 'baas')">Agregar a la orden</button>
+                </div>
+
+                <div class="mp-card" id="conf-dba">
+                    <div class="mp-header">
+                        <div class="mp-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"/></svg></div>
+                        <div><h3>Administración DBA</h3></div>
+                    </div>
+                    <div class="mp-desc">Gestión, tuning y mantenimiento avanzado de motores de bases de datos.</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Motor de Base de Datos</label>
+                        <select id="dba-engine" class="mp-select" onchange="calcDBA()">
+                            <option value="mysql">MySQL / PostgreSQL</option>
+                            <option value="sqlserver">Microsoft SQL Server</option>
+                            <option value="oracle">Oracle Database</option>
+                        </select>
+                    </div>
+                    <div class="mp-config-group">
+                        <label>Arquitectura</label>
+                        <select id="dba-arch" class="mp-select" onchange="calcDBA()">
+                            <option value="single">Instancia Sola (Single Node)</option>
+                            <option value="cluster">Alta Disponibilidad (Cluster/Standby)</option>
+                        </select>
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="dba-price-val">1000.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Servicio DBA Gestionado', 'dba')">Agregar a la orden</button>
+                </div>
+
+            </div>
+
+            <h2 id="cat-soporte" style="margin-bottom: 2rem; color: var(--text-dark); border-bottom: 2px solid var(--portal-border); padding-bottom: 10px;">Soporte y Mesa de Ayuda</h2>
+            <div class="mp-grid" style="margin-bottom: 4rem;">
+                
+                <div class="mp-card" id="conf-servicedesk">
+                    <div class="mp-header">
+                        <div class="mp-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                        <div><h3>Mesa de Servicio TI</h3></div>
+                    </div>
+                    <div class="mp-desc">Outsourcing de Service Desk bajo metodología ITIL e ISO 20000.</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Nivel de Atención</label>
+                        <select id="desk-level" class="mp-select" onchange="calcServiceDesk()">
+                            <option value="l1">Soporte Nivel 1 (Helpdesk)</option>
+                            <option value="l2">Soporte Nivel 2 (Técnico Avanzado)</option>
+                            <option value="l3">Soporte Nivel 3 (Especialistas / Ing.)</option>
+                        </select>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="mp-config-group">
+                            <label>Vol. Usuarios</label>
+                            <select id="desk-users" class="mp-select" onchange="calcServiceDesk()">
+                                <option value="50">Hasta 50</option>
+                                <option value="200">Hasta 200</option>
+                                <option value="500">Más de 200</option>
+                            </select>
+                        </div>
+                        <div class="mp-config-group">
+                            <label>Horario</label>
+                            <select id="desk-time" class="mp-select" onchange="calcServiceDesk()">
+                                <option value="8x5">8x5 (L-V)</option>
+                                <option value="24x7">24x7</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="desk-price-val">1000.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Mesa de Servicio TI', 'servicedesk')">Agregar a la orden</button>
+                </div>
+
+                <div class="mp-card" id="conf-soportepc">
+                    <div class="mp-header">
+                        <div class="mp-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                        <div><h3>Soporte Endpoints</h3></div>
+                    </div>
+                    <div class="mp-desc">Mantenimiento preventivo y correctivo para flotas de PCs y laptops.</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Cantidad de Dispositivos (Endpoints)</label>
+                        <select id="soporte-pcs" class="mp-select" onchange="calcSoportePC()">
+                            <option value="20">1 a 20 Equipos</option>
+                            <option value="50">21 a 50 Equipos</option>
+                            <option value="100">51 a 100 Equipos</option>
+                        </select>
+                    </div>
+                    <div class="mp-config-group">
+                        <label>Frecuencia de Mantenimiento Preventivo</label>
+                        <select id="soporte-freq" class="mp-select" onchange="calcSoportePC()">
+                            <option value="trim">Trimestral (Recomendado)</option>
+                            <option value="mes">Mensual</option>
+                        </select>
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="soporte-price-val">800.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Soporte Endpoints (PC/Laptop)', 'soportepc')">Agregar a la orden</button>
+                </div>
+            </div>
+
+            <h2 id="cat-productividad" style="margin-bottom: 2rem; color: var(--text-dark); border-bottom: 2px solid var(--portal-border); padding-bottom: 10px;">Productividad y Colaboración</h2>
+            <div class="mp-grid" style="margin-bottom: 4rem;">
+                
+                <div class="mp-card" id="conf-m365">
+                    <div class="mp-header">
+                        <div class="mp-icon" style="background: linear-gradient(135deg, #0078D4 0%, #005A9E 100%);"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6" fill="white"/></svg></div>
+                        <div><h3>Microsoft 365 Empresarial</h3></div>
+                    </div>
+                    <div class="mp-desc">Suite de correo corporativo Exchange, Teams y aplicaciones de Office.</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Plan Empresarial</label>
+                        <select id="m365-plan" class="mp-select" onchange="calcM365()">
+                            <option value="basic">Business Basic (Web + Correo)</option>
+                            <option value="std">Business Standard (Apps Escritorio)</option>
+                            <option value="prem">Business Premium (Cyberseguridad extra)</option>
+                        </select>
+                    </div>
+                    <div class="mp-config-group">
+                        <label>Cantidad de Licencias (Buzones)</label>
+                        <input type="number" id="m365-qty" class="mp-input" value="10" min="1" max="1000" oninput="calcM365()">
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="m365-price-val">1200.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Licenciamiento Microsoft 365', 'm365')">Agregar a la orden</button>
+                </div>
+
+            </div>
+
+            <h2 id="cat-redes" style="margin-bottom: 2rem; color: var(--text-dark); border-bottom: 2px solid var(--portal-border); padding-bottom: 10px;">Redes e Infraestructura Conectada</h2>
+            <div class="mp-grid" style="margin-bottom: 4rem;">
+                
+                <div class="mp-card" id="conf-vpn">
+                    <div class="mp-header">
+                        <div class="mp-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                        <div><h3>VPN y Redes Cisco</h3></div>
+                    </div>
+                    <div class="mp-desc">Administración de túneles VPN, configuraciones VLAN y hardware de red.</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Arquitectura de Túnel</label>
+                        <select id="vpn-type" class="mp-select" onchange="calcVPN()">
+                            <option value="client">Client-to-Site (Teletrabajo)</option>
+                            <option value="site">Site-to-Site (Sucursales)</option>
+                        </select>
+                    </div>
+                    <div class="mp-config-group">
+                        <label>Gestión de Hardware Red (Cisco/Meraki)</label>
+                        <select id="vpn-hw" class="mp-select" onchange="calcVPN()">
+                            <option value="no">Sin hardware (Solo software VPN)</option>
+                            <option value="yes">Administración de Switches/Routers</option>
+                        </select>
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="vpn-price-val">500.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Redes y VPN Empresarial', 'vpn')">Agregar a la orden</button>
+                </div>
+            </div>
+
+            <h2 id="cat-seguridad" style="margin-bottom: 2rem; color: var(--text-dark); border-bottom: 2px solid var(--portal-border); padding-bottom: 10px;">Ciberseguridad Avanzada</h2>
+            <div class="mp-grid" style="margin-bottom: 4rem;">
+                
+                <div class="mp-card" id="conf-cyber">
+                    <div class="mp-header">
+                        <div class="mp-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div><h3>Ciberseguridad SOC</h3></div>
+                    </div>
+                    <div class="mp-desc">Monitoreo activo 24/7 de amenazas, antimalware gestionado (EDR) ISO 27001.</div>
+                    
+                    <div class="mp-config-group">
+                        <label>Cobertura Endpoints a Monitorear</label>
+                        <select id="cyber-endpoints" class="mp-select" onchange="calcCyber()">
+                            <option value="50">Hasta 50 Endpoints</option>
+                            <option value="250">Hasta 250 Endpoints</option>
+                            <option value="plus">Más de 250 Endpoints</option>
+                        </select>
+                    </div>
+                    <div class="mp-config-group">
+                        <label>Nivel de Respuesta a Incidentes</label>
+                        <select id="cyber-resp" class="mp-select" onchange="calcCyber()">
+                            <option value="alert">Alertamiento Temprano (Solo Reportes)</option>
+                            <option value="remed">Remediación y Aislamiento Activo</option>
+                        </select>
+                    </div>
+
+                    <div class="mp-price-display">
+                        <span class="mp-price-label">Mensualidad</span>
+                        <div class="mp-price-value">$<span id="cyber-price-val">2000.00</span> <span>MXN</span></div>
+                    </div>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Ciberseguridad SOC / EDR', 'cyber')">Agregar a la orden</button>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <div class="cart-float-btn" onclick="toggleCart()">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <div class="cart-badge" id="cart-count">0</div>
+    </div>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3 style="margin:0; font-size:1.3rem;">Su Orden de Servicios</h3>
+            <button class="cart-close" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-items-container">
+            <p style="text-align:center; color:gray; margin-top:50px;">Su carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price">$0.00 MXN</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Generar Orden de Compra</button>
+        </div>
+    </div>
+
+    <div class="order-modal" id="order-modal">
+        <div class="order-modal-header">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h2 style="color:white; margin:0; font-size:1.5rem;">Orden Generada Correctamente</h2>
+        </div>
+        <div class="order-modal-body">
+            <div class="order-meta">
+                <h4 id="modal-order-number">Orden #20260000</h4>
+                <p id="modal-order-date">Fecha: </p>
+            </div>
+            <div id="modal-order-items">
+                </div>
+            <h3 style="text-align:right; margin-top:20px; color:var(--primary-color); font-size:1.5rem;">Total: <span id="modal-order-total">$0.00</span> MXN</h3>
+        </div>
+        <div class="order-modal-footer">
+            <button class="btn-close-modal" onclick="closeOrderModal()">Aceptar y Cerrar</button>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const landingView = document.getElementById('landing-view');
+        const portalView = document.getElementById('portal-view');
+        const header = document.getElementById('header');
+
+        // ================== NAVEGACIÓN Y VISTAS ==================
+        function openPortal(targetId = null) {
+            landingView.style.display = 'none';
+            header.style.display = 'none'; // Ocultar header original para la vista SaaS
+            portalView.style.display = 'flex';
+            
+            // Highlight nav link just in case
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-link'));
+            document.getElementById('nav-portal').classList.add('active-link');
+
+            if(targetId) {
+                const targetEl = document.getElementById(targetId);
+                if(targetEl) {
+                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Animación de highlight sutil
+                    targetEl.classList.add('highlight');
+                    setTimeout(() => targetEl.classList.remove('highlight'), 2000);
+                }
+            } else {
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function openLanding(hashAnchor = '#hero') {
+            portalView.style.display = 'none';
+            landingView.style.display = 'block';
+            header.style.display = 'block';
+            
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-link'));
+            
+            // Delay para que aplique el scroll al ancla
+            setTimeout(() => {
+                window.location.hash = hashAnchor;
+            }, 50);
+        }
+
+        // Setup inicial nav
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const spans = hamburger.querySelectorAll('span');
+                if(navLinks.classList.contains('active')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); 
+
+            // Intersection Observer
+            const fadeElements = document.querySelectorAll('.fade-up');
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+            fadeElements.forEach(element => { observer.observe(element); });
+            
+            // Iniciar calculadoras
+            calcAll();
+        });
+
+        // ================== LÓGICA DE PRECIOS DEL PORTAL ==================
+        let currentPrices = {
+            fact: 0, portal: 0, cloud: 0, baas: 0, dba: 0, 
+            servicedesk: 0, soportepc: 0, m365: 0, vpn: 0, cyber: 0
+        };
+
+        function calcAll() {
+            calcFacturacion(); calcPortal(); calcCloud(); calcBaaS(); calcDBA();
+            calcServiceDesk(); calcSoportePC(); calcM365(); calcVPN(); calcCyber();
+        }
+
+        const formatMoney = (amount) => parseFloat(amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+
+        function calcFacturacion() {
+            const plan = document.getElementById('fact-users').value;
+            let price = 800; 
+            if (plan === 'inter') price += 700;
+            if (plan === 'pro') price += 1500;
+            if (plan === 'max') price += 3200;
+            currentPrices.fact = price;
+            document.getElementById('fact-price-val').innerText = formatMoney(price);
+        }
+
+        function calcPortal() {
+            const plan = document.getElementById('portal-plan').value;
+            const users = document.getElementById('portal-users').value;
+            let price = 0;
+            if (plan === 'basic') price += 1500;
+            if (plan === 'pro') price += 3000;
+            if (plan === 'enterprise') price += 5500;
+            if (users === '500') price += 1000;
+            if (users === 'unlimited') price += 3000;
+            currentPrices.portal = price;
+            document.getElementById('portal-price-val').innerText = formatMoney(price);
+        }
+
+        function calcCloud() {
+            const os = document.getElementById('cloud-os').value;
+            const ram = parseInt(document.getElementById('cloud-ram').value);
+            const vcpu = parseInt(document.getElementById('cloud-vcpu').value);
+            const disk = document.getElementById('cloud-disk').value;
+            let price = 250; 
+            if (os === 'windows') price += 600; 
+            price += (ram * 40);
+            price += (vcpu * 80);
+            if (disk === '100') price += 150;
+            if (disk === '250') price += 300;
+            if (disk === '500') price += 500;
+            if (disk === '1000') price += 900;
+            if (disk === '2000') price += 1600;
+            currentPrices.cloud = price;
+            document.getElementById('cloud-price-val').innerText = formatMoney(price);
+        }
+
+        function calcBaaS() {
+            const space = document.getElementById('baas-space').value;
+            const freq = document.getElementById('baas-freq').value;
+            let price = 300;
+            if (space === '1000') price += 400;
+            if (space === '5000') price += 1500;
+            if (space === '10000') price += 2800;
+            if (freq === 'hourly') price += 800;
+            currentPrices.baas = price;
+            document.getElementById('baas-price-val').innerText = formatMoney(price);
+        }
+
+        function calcDBA() {
+            const engine = document.getElementById('dba-engine').value;
+            const arch = document.getElementById('dba-arch').value;
+            let price = 1000;
+            if (engine === 'sqlserver') price += 3000;
+            if (engine === 'oracle') price += 5000;
+            if (arch === 'cluster') price += 2000;
+            currentPrices.dba = price;
+            document.getElementById('dba-price-val').innerText = formatMoney(price);
+        }
+
+        function calcServiceDesk() {
+            const level = document.getElementById('desk-level').value;
+            const users = document.getElementById('desk-users').value;
+            const time = document.getElementById('desk-time').value;
+            let price = 1000;
+            if (level === 'l2') price += 500;
+            if (level === 'l3') price += 1500;
+            if (users === '200') price += 1000;
+            if (users === '500') price += 2500;
+            if (time === '24x7') price = price * 1.5;
+            currentPrices.servicedesk = price;
+            document.getElementById('desk-price-val').innerText = formatMoney(price);
+        }
+
+        function calcSoportePC() {
+            const pcs = document.getElementById('soporte-pcs').value;
+            const freq = document.getElementById('soporte-freq').value;
+            let price = 800;
+            if (pcs === '50') price += 1500;
+            if (pcs === '100') price += 3500;
+            if (freq === 'mes') price += 1000;
+            currentPrices.soportepc = price;
+            document.getElementById('soporte-price-val').innerText = formatMoney(price);
+        }
+
+        function calcM365() {
+            const plan = document.getElementById('m365-plan').value;
+            const qty = parseInt(document.getElementById('m365-qty').value) || 0;
+            let costPerLicense = 120;
+            if (plan === 'std') costPerLicense = 250;
+            if (plan === 'prem') costPerLicense = 440;
+            let price = costPerLicense * qty;
+            currentPrices.m365 = price;
+            document.getElementById('m365-price-val').innerText = formatMoney(price);
+        }
+
+        function calcVPN() {
+            const type = document.getElementById('vpn-type').value;
+            const hw = document.getElementById('vpn-hw').value;
+            let price = 500;
+            if (type === 'site') price += 1000;
+            if (hw === 'yes') price += 2500;
+            currentPrices.vpn = price;
+            document.getElementById('vpn-price-val').innerText = formatMoney(price);
+        }
+
+        function calcCyber() {
+            const endps = document.getElementById('cyber-endpoints').value;
+            const resp = document.getElementById('cyber-resp').value;
+            let price = 2000;
+            if (endps === '250') price += 4000;
+            if (endps === 'plus') price += 8000;
+            if (resp === 'remed') price += 3000;
+            currentPrices.cyber = price;
+            document.getElementById('cyber-price-val').innerText = formatMoney(price);
+        }
+
+        // ================== GESTIÓN DEL CARRITO ==================
+        let shoppingCart = [];
+
+        function getConfigText(type) {
+            const gT = (id) => document.getElementById(id).options[document.getElementById(id).selectedIndex].text;
+            switch(type) {
+                case 'fact': return gT('fact-users');
+                case 'portal': return `${gT('portal-plan')} | ${gT('portal-users')}`;
+                case 'cloud': return `${gT('cloud-os')} | ${document.getElementById('cloud-ram').value}GB | ${document.getElementById('cloud-vcpu').value}vCPU | ${gT('cloud-disk')}`;
+                case 'baas': return `${gT('baas-space')} | ${gT('baas-freq')}`;
+                case 'dba': return `${gT('dba-engine')} | ${gT('dba-arch')}`;
+                case 'servicedesk': return `${gT('desk-level')} | ${gT('desk-users')} usr | ${gT('desk-time')}`;
+                case 'soportepc': return `${gT('soporte-pcs')} | Mantenimiento ${gT('soporte-freq')}`;
+                case 'm365': return `${document.getElementById('m365-qty').value}x Licencias ${gT('m365-plan')}`;
+                case 'vpn': return `${gT('vpn-type')} | HW Adm: ${gT('vpn-hw')}`;
+                case 'cyber': return `${gT('cyber-endpoints')} | ${gT('cyber-resp')}`;
+            }
+            return '';
+        }
+
+        function addServiceToCart(serviceName, type) {
+            const price = currentPrices[type];
+            if(price === 0) return;
+            const configText = getConfigText(type);
+            
+            const existingIndex = shoppingCart.findIndex(item => item.type === type && item.config === configText);
+            if(existingIndex > -1) {
+                shoppingCart[existingIndex].qty += 1;
+            } else {
+                shoppingCart.push({ id: Date.now().toString(), name: serviceName, type: type, config: configText, price: price, qty: 1 });
+            }
+
+            renderCart();
+            const cartBtn = document.querySelector('.cart-float-btn');
+            cartBtn.style.transform = 'scale(1.2)';
+            setTimeout(() => cartBtn.style.transform = 'scale(1)', 200);
+
+            if(!document.getElementById('cart-sidebar').classList.contains('open')) {
+                toggleCart();
+            }
+        }
+
+        function removeFromCart(id) {
+            shoppingCart = shoppingCart.filter(item => item.id !== id);
+            renderCart();
+        }
+
+        function changeQty(id, delta) {
+            const item = shoppingCart.find(i => i.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) removeFromCart(id);
+                else renderCart();
+            }
+        }
+
+        function renderCart() {
+            const container = document.getElementById('cart-items-container');
+            const countBadge = document.getElementById('cart-count');
+            const totalDisplay = document.getElementById('cart-total-price');
+            
+            let totalQty = 0, totalPrice = 0;
+            container.innerHTML = '';
+
+            if (shoppingCart.length === 0) {
+                container.innerHTML = '<p style="text-align:center; color:gray; margin-top:50px;">Su orden está vacía. Configure un servicio para comenzar.</p>';
+            } else {
+                shoppingCart.forEach(item => {
+                    totalQty += item.qty;
+                    const itemTotal = item.price * item.qty;
+                    totalPrice += itemTotal;
+
+                    const div = document.createElement('div');
+                    div.className = 'cart-item';
+                    div.innerHTML = `
+                        <button class="btn-remove-item" onclick="removeFromCart('${item.id}')" title="Eliminar servicio">&times;</button>
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-details">${item.config}</div>
+                        <div class="cart-item-controls">
+                            <div class="cart-qty-ctrl">
+                                <button onclick="changeQty('${item.id}', -1)">-</button>
+                                <input type="text" value="${item.qty}" readonly>
+                                <button onclick="changeQty('${item.id}', 1)">+</button>
+                            </div>
+                            <div class="cart-item-price">$${formatMoney(itemTotal)}</div>
+                        </div>
+                    `;
+                    container.appendChild(div);
+                });
+            }
+            countBadge.innerText = totalQty;
+            totalDisplay.innerText = `$${formatMoney(totalPrice)} MXN`;
+        }
+
+        function toggleCart() {
+            document.getElementById('cart-sidebar').classList.toggle('open');
+            document.getElementById('cart-overlay').classList.toggle('show');
+        }
+
+        function checkout() {
+            if (shoppingCart.length === 0) {
+                alert("Seleccione al menos un servicio para generar una orden de compra.");
+                return;
+            }
+            toggleCart(); 
+
+            const orderNum = "2026" + String(Math.floor(Math.random() * 10000)).padStart(4, '0');
+            const today = new Date();
+            const dateStr = today.toLocaleDateString('es-MX') + " " + today.toLocaleTimeString('es-MX');
+
+            let finalTotal = 0;
+            let htmlSummary = '';
+
+            shoppingCart.forEach(item => {
+                const subTotal = item.price * item.qty;
+                finalTotal += subTotal;
+                htmlSummary += `
+                    <div class="order-summary-item">
+                        <strong>${item.name} (x${item.qty})</strong>
+                        Configuración: ${item.config}<br>
+                        Subtotal: $${formatMoney(subTotal)}
+                    </div>
+                `;
+            });
+
+            document.getElementById('modal-order-number').innerText = `Orden #${orderNum}`;
+            document.getElementById('modal-order-date').innerText = `Generada el: ${dateStr}`;
+            document.getElementById('modal-order-items').innerHTML = htmlSummary;
+            document.getElementById('modal-order-total').innerText = formatMoney(finalTotal);
+
+            document.getElementById('order-modal').classList.add('open');
+            document.getElementById('cart-overlay').classList.add('show');
+            document.getElementById('cart-overlay').setAttribute('onclick', 'closeOrderModal()');
+        }
+
+        function closeOrderModal() {
+            document.getElementById('order-modal').classList.remove('open');
+            document.getElementById('cart-overlay').classList.remove('show');
+            document.getElementById('cart-overlay').setAttribute('onclick', 'toggleCart()');
+            
+            shoppingCart = [];
+            renderCart();
+        }
+
+    </script>
+</body>
+</html>
