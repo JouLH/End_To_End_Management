@@ -171,9 +171,9 @@
         .service-link:hover { color: var(--primary-color); }
 
         /* ==========================================================================
-           INDEPENDENT SAAS VIEW: PORTAL DE SOLUCIONES TI
+           INDEPENDENT SAAS VIEWS: PORTAL & SOCIAL
            ========================================================================== */
-        #portal-view { background-color: var(--portal-bg); min-height: 100vh; padding-top: 80px; display: flex; }
+        #portal-view, #social-view { background-color: var(--portal-bg); min-height: 100vh; padding-top: 80px; display: flex; }
         .portal-sidebar { width: 260px; background: var(--bg-white); border-right: 1px solid var(--portal-border); height: calc(100vh - 80px); position: fixed; top: 80px; left: 0; overflow-y: auto; padding: 2rem 1.5rem; }
         .portal-sidebar-title { font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--text-light); letter-spacing: 1px; margin-bottom: 1.5rem; }
         .portal-nav { list-style: none; }
@@ -790,33 +790,28 @@
 
           <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; align-items: flex-start;">
 
-            <!-- TWEET 1 -->
+            <!-- TWEET 1 — Cliente satisfecho -->
+            <blockquote class="twitter-tweet">
+              <p lang="es" dir="ltr">😌 La mejor llamada con un vendedor de TI es la que nunca tuviste que hacer. <br>Entra. Explora. Configura. <br>Tú decides cuántos usuarios. <br>Tú decides Linux o Windows. <br>Tú decides cuánto almacenamiento.<br> Tú ves el precio en tiempo real. Tú generas tu orden.
+              <a href="https://x.com/hashtag/MakeITReal?src=hash&amp;ref_src=twsrc%5Etfw">#MakeITReal</a> 
+              <a href="https://x.com/hashtag/TúDecides?src=hash&amp;ref_src=twsrc%5Etfw">#TúDecides</a> 
+              <a href="https://t.co/Yx5yxFUp18">pic.twitter.com/Yx5yxFUp18</a></p>
+              &mdash; EjemploENDtoEND (@EjemploENDtoEND)
+              <a href="https://x.com/EjemploENDtoEND/status/2064053892657078339?ref_src=twsrc%5Etfw">June 8, 2026</a>
+            </blockquote>
+
+            <!-- TWEET 2 — Amazon de TI -->
             <blockquote class="twitter-tweet" data-media-max-width="560">
-              <p lang="es" dir="ltr">💡 ¿Qué pasaría si comprar tecnología empresarial<br>fuera tan fácil como comprar en Amazon?<br>Entra. Elige tus servicios.<br>→ Facturación<br>→ Ciberseguridad<br>→ Nube Privada<br>→ Soporte Técnico<br>→ ERP, y más...<br>El precio se actualiza solo.<br>Sin llamadas. Sin vendedores. Sin esperas. <a href="https://t.co/yruzKxxqvv">pic.twitter.com/yruzKxxqvv</a></p>
+              <p lang="es" dir="ltr">💡 ¿Qué pasaría si comprar tecnología empresarial<br>fuera tan fácil como comprar en Amazon?<br>Entra. Elige tus servicios.<br>→ Facturación<br>→ Ciberseguridad<br>→ Nube Privada<br>→ Soporte Técnico<br>→ ERP, y más...<br>El precio se actualiza solo.<br>Sin llamadas. Sin vendedores. Sin esperas.  
+              <a href="https://t.co/yruzKxxqvv">pic.twitter.com/yruzKxxqvv</a></p>
               &mdash; EjemploENDtoEND (@EjemploENDtoEND)
               <a href="https://x.com/EjemploENDtoEND/status/2063817127744634910?ref_src=twsrc%5Etfw">June 8, 2026</a>
             </blockquote>
 
-            <!-- TWEET 2 -->
-            <blockquote class="twitter-tweet" data-media-max-width="560">
-              <p lang="es" dir="ltr">Así es End to End Management. 👇 🌐 
-              <a href="https://t.co/NxSdOMaEJh">https://t.co/NxSdOMaEJh</a> 
-              <a href="https://x.com/hashtag/MakeITReal?src=hash&amp;ref_src=twsrc%5Etfw">#MakeITReal</a> 
-              <a href="https://x.com/hashtag/EcomerceTI?src=hash&amp;ref_src=twsrc%5Etfw">#EcomerceTI</a> 
-              <a href="https://x.com/hashtag/InnovaciónEmpresarial?src=hash&amp;ref_src=twsrc%5Etfw">#InnovaciónEmpresarial</a> 
-              <a href="https://x.com/hashtag/TransformaciónDigital?src=hash&amp;ref_src=twsrc%5Etfw">#TransformaciónDigital</a> 
-              <a href="https://t.co/bzuarZeorF">pic.twitter.com/bzuarZeorF</a></p>
-              &mdash; EjemploENDtoEND (@EjemploENDtoEND) 
-              <a href="https://x.com/EjemploENDtoEND/status/2063817342555955348?ref_src=twsrc%5Etfw">June 8, 2026</a>
-            </blockquote>
-
-            <!-- TWEET 3 -->
-            <blockquote class="twitter-tweet">
-              <p lang="es" dir="ltr">💡 En tecnología empresarial, <br>tú decides qué necesitas.<br>Nosotros lo construimos.<br><br>End to End Management — Make IT Real. <a href="https://t.co/PezdCRxWYt">pic.twitter.com/PezdCRxWYt</a></p>
-              &mdash; EjemploENDtoEND (@EjemploENDtoEND) 
-              <a href="https://x.com/EjemploENDtoEND/status/2064045680939672010?ref_src=twsrc%5Etfw">June 8, 2026</a>
-            </blockquote>
-
+          </div>
+          
+          <div style="text-align:center; margin-top: 30px;">
+              <button class="btn btn-primary" onclick="openSocialView()">Explorar todas las campañas</button>
           </div>
 
           <!-- Script de X — solo una vez -->
@@ -1258,6 +1253,105 @@
         </main>
     </div>
 
+    <!-- ================== VISTA INDEPENDIENTE SAAS (CAMPAÑA EN X - REDES SOCIALES) ================== -->
+    <div id="social-view" style="display:none; background-color: var(--portal-bg); min-height: 100vh; padding-top: 80px;">
+        
+        <aside class="portal-sidebar">
+            <button class="portal-back-btn" onclick="openLanding('#hero')">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Volver al Sitio Web
+            </button>
+
+            <div class="portal-sidebar-title">Contenido Social</div>
+            <ul class="portal-nav">
+                <li><a class="active"><svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg> Últimas Campañas</a></li>
+            </ul>
+        </aside>
+
+        <main class="portal-main">
+            <!-- SECCIÓN CAMPAÑA EN X — PARTE 2 -->
+            <section style="padding: 60px 20px; background: #060d1a; text-align: center; border-radius: 12px;">
+              <h2 style="color: white; font-size: 28px; margin-bottom: 10px;">
+                Lo que dicen nuestras campañas
+              </h2>
+              <p style="color: #4a7fc0; margin-bottom: 40px; font-size: 16px;">
+                Síguenos en @EjemploENDtoEND
+              </p>
+
+              <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; align-items: flex-start;">
+
+                <!-- TWEET 1 -->
+                <blockquote class="twitter-tweet" data-media-max-width="560">
+                  <p lang="es" dir="ltr">Así es End to End Management. 👇 🌐 
+                  <a href="https://t.co/NxSdOMaEJh">https://t.co/NxSdOMaEJh</a> 
+                  <a href="https://x.com/hashtag/MakeITReal?src=hash&amp;ref_src=twsrc%5Etfw">#MakeITReal</a> 
+                  <a href="https://x.com/hashtag/EcomerceTI?src=hash&amp;ref_src=twsrc%5Etfw">#EcomerceTI</a> 
+                  <a href="https://x.com/hashtag/InnovaciónEmpresarial?src=hash&amp;ref_src=twsrc%5Etfw">#InnovaciónEmpresarial</a> 
+                  <a href="https://x.com/hashtag/TransformaciónDigital?src=hash&amp;ref_src=twsrc%5Etfw">#TransformaciónDigital</a> 
+                  <a href="https://x.com/hashtag/CloudMéxico?src=hash&amp;ref_src=twsrc%5Etfw">#CloudMéxico</a> 
+                  <a href="https://x.com/hashtag/CiberseguridadMéxico?src=hash&amp;ref_src=twsrc%5Etfw">#CiberseguridadMéxico</a> 
+                  <a href="https://x.com/hashtag/PYMEsMéxico?src=hash&amp;ref_src=twsrc%5Etfw">#PYMEsMéxico</a> 
+                  <a href="https://x.com/hashtag/TecnologíaEmpresarial?src=hash&amp;ref_src=twsrc%5Etfw">#TecnologíaEmpresarial</a> 
+                  <a href="https://x.com/hashtag/Automatización?src=hash&amp;ref_src=twsrc%5Etfw">#Automatización</a> 
+                  <a href="https://x.com/hashtag/EndToEndManagement?src=hash&amp;ref_src=twsrc%5Etfw">#EndToEndManagement</a> 
+                  <a href="https://x.com/hashtag/MéxicoDigital?src=hash&amp;ref_src=twsrc%5Etfw">#MéxicoDigital</a> 
+                  <a href="https://x.com/hashtag/ERP?src=hash&amp;ref_src=twsrc%5Etfw">#ERP</a> 
+                  <a href="https://t.co/bzuarZeorF">pic.twitter.com/bzuarZeorF</a></p>
+                  &mdash; EjemploENDtoEND (@EjemploENDtoEND)
+                  <a href="https://x.com/EjemploENDtoEND/status/2063817342555955348?ref_src=twsrc%5Etfw">June 8, 2026</a>
+                </blockquote>
+
+                <!-- TWEET 2 -->
+                <blockquote class="twitter-tweet" data-media-max-width="560">
+                  <p lang="es" dir="ltr">💡 En tecnología empresarial, <br>tú decides qué necesitas.<br>Nosotros lo construimos.<br><br>End to End Management — Make IT Real. 
+                  <a href="https://t.co/PezdCRxWYt">pic.twitter.com/PezdCRxWYt</a></p>
+                  &mdash; EjemploENDtoEND (@EjemploENDtoEND)
+                  <a href="https://x.com/EjemploENDtoEND/status/2064045680939672010?ref_src=twsrc%5Etfw">June 8, 2026</a>
+                </blockquote>
+
+                <!-- TWEET 3 -->
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">"Transformación Digital de Principio a Fin. 🚀 Escala, administra y protege la infraestructura de tu empresa con la facilidad de un clic. 🛒
+                  EndToEndManagement
+                  <a href="https://x.com/hashtag/TransformacionDigital?src=hash&amp;ref_src=twsrc%5Etfw">#TransformacionDigital</a>
+                  <a href="https://x.com/hashtag/CloudComputing?src=hash&amp;ref_src=twsrc%5Etfw">#CloudComputing</a>
+                  <a href="https://x.com/hashtag/Ciberseguridad?src=hash&amp;ref_src=twsrc%5Etfw">#Ciberseguridad</a>
+                  <a href="https://x.com/hashtag/InfraestructuraTI?src=hash&amp;ref_src=twsrc%5Etfw">#InfraestructuraTI</a>
+                  <a href="https://x.com/hashtag/SolucionesEmpresariales?src=hash&amp;ref_src=twsrc%5Etfw">#SolucionesEmpresariales</a>
+                  <a href="https://x.com/hashtag/InnovacionTI?src=hash&amp;ref_src=twsrc%5Etfw">#InnovacionTI</a> 
+                  <a href="https://t.co/i0kxyHxDEh">pic.twitter.com/i0kxyHxDEh</a></p>
+                  &mdash; EjemploENDtoEND (@EjemploENDtoEND)
+                  <a href="https://x.com/EjemploENDtoEND/status/2064050155016298698?ref_src=twsrc%5Etfw">June 8, 2026</a>
+                </blockquote>
+
+                <!-- TWEET 4 -->
+                <blockquote class="twitter-tweet">
+                  <p lang="es" dir="ltr">Sin presión. Sin vendedores.<br>Sin que nadie te diga qué necesitas.<br><br>Porque tú ya lo sabes. 👇<br>🌐 
+                  <a href="https://t.co/NxSdOMaEJh">https://t.co/NxSdOMaEJh</a>
+                  <a href="https://x.com/hashtag/MakeITReal?src=hash&amp;ref_src=twsrc%5Etfw">#MakeITReal</a> 
+                  <a href="https://x.com/hashtag/TúDecides?src=hash&amp;ref_src=twsrc%5Etfw">#TúDecides</a> 
+                  <a href="https://x.com/hashtag/EcomerceTI?src=hash&amp;ref_src=twsrc%5Etfw">#EcomerceTI</a>
+                  <a href="https://x.com/hashtag/CloudMéxico?src=hash&amp;ref_src=twsrc%5Etfw">#CloudMéxico</a> 
+                  <a href="https://x.com/hashtag/TransformaciónDigital?src=hash&amp;ref_src=twsrc%5Etfw">#TransformaciónDigital</a>
+                  <a href="https://x.com/hashtag/PYMEsMéxico?src=hash&amp;ref_src=twsrc%5Etfw">#PYMEsMéxico</a> 
+                  <a href="https://x.com/hashtag/EndToEndManagement?src=hash&amp;ref_src=twsrc%5Etfw">#EndToEndManagement</a>
+                  <a href="https://x.com/hashtag/TecnologíaEmpresarial?src=hash&amp;ref_src=twsrc%5Etfw">#TecnologíaEmpresarial</a> 
+                  <a href="https://x.com/hashtag/MéxicoDigital?src=hash&amp;ref_src=twsrc%5Etfw">#MéxicoDigital</a>
+                  <a href="https://x.com/hashtag/Automatización?src=hash&amp;ref_src=twsrc%5Etfw">#Automatización</a> 
+                  <a href="https://t.co/L3FnszOAw5">pic.twitter.com/L3FnszOAw5</a></p>
+                  &mdash; EjemploENDtoEND (@EjemploENDtoEND)
+                  <a href="https://x.com/EjemploENDtoEND/status/2064050838562091466?ref_src=twsrc%5Etfw">June 8, 2026</a>
+                </blockquote>
+
+              </div>
+
+              <!-- Script de X — solo una vez -->
+              <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+
+            </section>
+        </main>
+    </div>
+
     <!-- ================== COMPONENTES CARRITO ================== -->
     <!-- Botón Flotante del Carrito -->
     <div class="cart-float-btn" onclick="toggleCart()">
@@ -1307,7 +1401,7 @@
 
     <!-- ================== COMPONENTES DARA ================== -->
     <!-- Botón flotante Dara -->
-    <div class="dara-float-btn" onclick="toggleDara()">
+    <div class="dara-float-btn" onclick="toggleDaraUI()">
         <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
         <span>Dara IA</span>
     </div>
@@ -1319,16 +1413,16 @@
                 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
                 Asistente Virtual Dara
             </div>
-            <button class="dara-close" onclick="toggleDara()">&times;</button>
+            <button class="dara-close" onclick="toggleDaraUI()">&times;</button>
         </div>
         <div class="dara-messages" id="dara-messages">
-            <div class="msg dara">¡Hola! Soy Dara. Puedo ayudarte a navegar por el sitio, buscar servicios o abrir configuradores. ¿Qué necesitas?</div>
+            <div class="msg dara">¡Hola! Soy Dara, tu asistente virtual en End To End Management. ¿En qué puedo apoyarte hoy?</div>
         </div>
-        <div class="dara-status" id="dara-status">Estado: Lista para ayudarte</div>
+        <div class="dara-status" id="dara-status">Estado: En pausa</div>
         <div class="dara-input-area">
             <div class="dara-input-controls">
                 <input type="text" id="dara-text-input" class="dara-input" placeholder="Escribe o usa el micrófono..." onkeypress="if(event.key === 'Enter') sendDaraText()">
-                <button class="dara-btn mic" id="dara-mic-btn" onclick="startDaraVoice()">
+                <button class="dara-btn mic" id="dara-mic-btn" onclick="toggleDaraMic()" title="Activar/Desactivar micrófono">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
                 </button>
                 <button class="dara-btn" onclick="sendDaraText()">
@@ -1346,10 +1440,17 @@
         // ================== NAVEGACIÓN Y VISTAS ==================
         const landingView = document.getElementById('landing-view');
         const portalView = document.getElementById('portal-view');
+        const socialView = document.getElementById('social-view');
         const header = document.getElementById('header');
 
-        function openPortal(targetId = null) {
+        function hideAllViews() {
             landingView.style.display = 'none';
+            portalView.style.display = 'none';
+            socialView.style.display = 'none';
+        }
+
+        function openPortal(targetId = null) {
+            hideAllViews();
             header.style.display = 'none'; 
             portalView.style.display = 'flex';
             
@@ -1369,7 +1470,7 @@
         }
 
         function openLanding(hashAnchor = '#hero') {
-            portalView.style.display = 'none';
+            hideAllViews();
             landingView.style.display = 'block';
             header.style.display = 'block';
             
@@ -1378,6 +1479,18 @@
             setTimeout(() => {
                 window.location.hash = hashAnchor;
             }, 50);
+        }
+
+        function openSocialView() {
+            hideAllViews();
+            header.style.display = 'none';
+            socialView.style.display = 'flex';
+            window.scrollTo(0, 0);
+            
+            // Forzar renderizado de widgets de X si es necesario
+            if(window.twttr && window.twttr.widgets) {
+                window.twttr.widgets.load();
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -1431,7 +1544,6 @@
             calcServiceDesk(); calcSoportePC(); calcM365(); calcVPN(); calcCyber();
         }
 
-        // Formato USD
         const formatMoney = (amount) => 'USD $' + parseFloat(amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
         function calcFacturacion() {
@@ -1698,7 +1810,7 @@
 
         // ================== LÓGICA ASISTENTE DARA MEJORADA ==================
         
-        function toggleDara() {
+        function toggleDaraUI() {
             document.getElementById('dara-window').classList.toggle('open');
             scrollDaraToBottom();
         }
@@ -1821,7 +1933,7 @@
                 { words: ['servicios', 'soluciones corporativas', 'que hacen', 'servicios de ti'], act: () => openLanding('#servicios'), res: 'Te mostraré un resumen de nuestros servicios empresariales.' },
                 { words: ['contacto', 'llamar', 'teléfono', 'correo', 'ubicación'], act: () => openLanding('#contacto'), res: 'Por supuesto, te llevo a la sección de contacto.' },
                 
-                { words: ['catálogo', 'centro de soluciones', 'marketplace', 'plataforma', 'contratar'], act: () => openPortal(), res: 'Abriendo el Centro de Soluciones de Tecnologías de la Información.' },
+                { words: ['catálogo', 'centro de soluciones', 'marketplace', 'plataforma', 'contratar', 'llevame al centro de soluciones ti', 'llévame al centro de soluciones ti', 'llévame al centro de soluciones', 'llevame al centro de soluciones'], act: () => openPortal(), res: 'Abriendo el Centro de Soluciones de Tecnologías de la Información.' },
                 { words: ['carrito', 'orden', 'compras', 'canasta', 'pagar', 'checkout'], act: () => { if(!document.getElementById('cart-sidebar').classList.contains('open')) toggleCart(); }, res: 'Mostrando tus servicios seleccionados para contratación.' },
                 
                 { words: ['facturación', 'facturas', 'cfdi', 'electrónica'], act: () => openPortal('conf-facturacion'), res: 'Abriendo el panel para contratar Facturación Electrónica.' },
