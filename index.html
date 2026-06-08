@@ -10,14 +10,14 @@
            VARIABLES & RESET
            ========================================================================== */
         :root {
-            --primary-color: #0A192F; /* Azul profundo corporativo */
-            --secondary-color: #0066FF; /* Azul tecnológico */
-            --accent-color: #00E5FF; /* Cyan de acento */
+            --primary-color: #0A192F;
+            --secondary-color: #0066FF;
+            --accent-color: #00E5FF;
             --text-dark: #1E293B;
             --text-light: #64748B;
             --bg-light: #F8FAFC;
             --bg-white: #FFFFFF;
-            --portal-bg: #F1F5F9; /* Fondo gris claro para vista SaaS */
+            --portal-bg: #F1F5F9;
             --portal-border: #E2E8F0;
             --transition: all 0.3s ease-in-out;
             --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -72,1076 +72,185 @@
         /* ==========================================================================
            TYPOGRAPHY & UTILITIES
            ========================================================================== */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--primary-color);
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-title p {
-            color: var(--text-light);
-            font-size: 1.125rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; color: var(--primary-color); }
+        h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .section-title { text-align: center; margin-bottom: 3.5rem; }
+        .section-title p { color: var(--text-light); font-size: 1.125rem; max-width: 700px; margin: 0 auto; }
 
         .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            border: none;
+            display: inline-block; padding: 12px 28px; font-size: 1rem; font-weight: 600;
+            border-radius: var(--border-radius); cursor: pointer; transition: var(--transition);
+            text-align: center; border: none;
         }
-
-        .btn-primary {
-            background-color: var(--secondary-color);
-            color: var(--bg-white);
-            box-shadow: 0 4px 14px 0 rgba(0, 102, 255, 0.39);
-        }
-
-        .btn-primary:hover {
-            background-color: #0052cc;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--bg-white);
-            border: 2px solid var(--bg-white);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--bg-white);
-            color: var(--primary-color);
-        }
-
-        .btn-outline-dark {
-            background-color: transparent;
-            color: var(--secondary-color);
-            border: 1px solid var(--secondary-color);
-            padding: 8px 16px;
-            font-size: 0.85rem;
-        }
-
-        .btn-outline-dark:hover {
-            background-color: var(--secondary-color);
-            color: var(--bg-white);
-        }
-
-        .section-padding {
-            padding: 6rem 0;
-        }
+        .btn-primary { background-color: var(--secondary-color); color: var(--bg-white); box-shadow: 0 4px 14px 0 rgba(0, 102, 255, 0.39); }
+        .btn-primary:hover { background-color: #0052cc; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4); }
+        .btn-outline { background-color: transparent; color: var(--bg-white); border: 2px solid var(--bg-white); }
+        .btn-outline:hover { background-color: var(--bg-white); color: var(--primary-color); }
+        .btn-outline-dark { background-color: transparent; color: var(--secondary-color); border: 1px solid var(--secondary-color); padding: 8px 16px; font-size: 0.85rem; }
+        .btn-outline-dark:hover { background-color: var(--secondary-color); color: var(--bg-white); }
+        .section-padding { padding: 6rem 0; }
 
         /* ==========================================================================
            PLACEHOLDER CONTENEDORES DE IMÁGENES & LOGOS
            ========================================================================== */
         .image-placeholder-container {
-            position: relative;
-            background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
-            border: none;
-            border-radius: var(--border-radius);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            text-align: center;
-            color: #475569;
-            font-size: 0.95rem;
-            font-weight: 500;
-            min-height: 250px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
-            transition: var(--transition);
-            overflow: hidden;
+            position: relative; background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E1 100%);
+            border: none; border-radius: var(--border-radius); display: flex; flex-direction: column;
+            align-items: center; justify-content: center; padding: 2rem; text-align: center;
+            color: #475569; font-size: 0.95rem; font-weight: 500; min-height: 250px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); transition: var(--transition); overflow: hidden;
         }
-
-        .image-placeholder-container:hover {
-            color: var(--secondary-color);
-        }
-
-        .image-placeholder-container svg {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 0.75rem;
-            fill: currentColor;
-            opacity: 0.7;
-        }
-
-        .image-placeholder-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: calc(var(--border-radius) - 2px);
-        }
+        .image-placeholder-container:hover { color: var(--secondary-color); }
+        .image-placeholder-container svg { width: 48px; height: 48px; margin-bottom: 0.75rem; fill: currentColor; opacity: 0.7; }
+        .image-placeholder-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: calc(var(--border-radius) - 2px); }
 
         .logo-img-container {
-            width: auto;
-            height: 45px;
-            min-width: 150px;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5px 10px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.8);
-            position: relative;
-            overflow: hidden;
+            width: auto; height: 45px; min-width: 150px; background: rgba(255, 255, 255, 0.1);
+            border: none; border-radius: 4px; display: flex; align-items: center; justify-content: center;
+            padding: 5px 10px; font-size: 0.75rem; color: rgba(255, 255, 255, 0.8); position: relative; overflow: hidden;
         }
-
-        .logo-img-container img {
-            max-height: 100%;
-            width: auto;
-            object-fit: contain;
-            position: relative;
-            z-index: 2;
-        }
-
-        header.scrolled .logo-img-container {
-            background: rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.8);
-        }
+        .logo-img-container img { max-height: 100%; width: auto; object-fit: contain; position: relative; z-index: 2; }
+        header.scrolled .logo-img-container { background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.8); }
 
         /* ==========================================================================
            HEADER & NAVIGATION (MAIN VIEW)
            ========================================================================== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: var(--transition);
-            padding: 20px 0;
-            background-color: transparent;
-        }
-
-        header.scrolled {
-            background-color: rgba(10, 25, 47, 0.98); 
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            box-shadow: var(--shadow-sm);
-        }
-
-        header.scrolled .nav-links a {
-            color: var(--bg-white);
-        }
-
-        header.scrolled .hamburger span {
-            background-color: var(--bg-white);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-group {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-text {
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: var(--bg-white);
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-        }
-
-        header.scrolled .logo-text {
-            color: var(--bg-white);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.75rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--bg-white);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            position: relative;
-            cursor: pointer;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after, .nav-links a.active-link::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--bg-white);
-            transition: var(--transition);
-            border-radius: 2px;
-        }
+        header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; transition: var(--transition); padding: 20px 0; background-color: transparent; }
+        header.scrolled { background-color: rgba(10, 25, 47, 0.98); backdrop-filter: blur(10px); padding: 15px 0; box-shadow: var(--shadow-sm); }
+        header.scrolled .nav-links a { color: var(--bg-white); }
+        header.scrolled .hamburger span { background-color: var(--bg-white); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo-group { display: flex; align-items: center; gap: 15px; }
+        .logo-text { font-size: 1.35rem; font-weight: 800; color: var(--bg-white); letter-spacing: -0.5px; text-transform: uppercase; }
+        header.scrolled .logo-text { color: var(--bg-white); }
+        
+        .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+        .nav-links a { color: var(--bg-white); font-weight: 500; font-size: 0.95rem; transition: var(--transition); position: relative; cursor: pointer; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--secondary-color); transition: var(--transition); }
+        .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+        .hamburger span { width: 25px; height: 3px; background-color: var(--bg-white); transition: var(--transition); border-radius: 2px; }
 
         /* ==========================================================================
            HERO SECTION
            ========================================================================== */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.96) 0%, rgba(0, 66, 170, 0.9) 100%);
-            background-color: var(--primary-color);
-            color: var(--bg-white);
-            padding-top: 100px;
-            padding-bottom: 6rem;
-            overflow: hidden;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(4px);
-            color: var(--accent-color);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.3rem, 4.5vw, 3.8rem);
-            color: var(--bg-white);
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-
-        .hero h1 span {
-            color: var(--accent-color);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 2.5rem;
-            max-width: 650px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .hero-image-wrapper .image-placeholder-container {
-            min-height: 400px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            color: rgba(255,255,255,0.7);
-        }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, rgba(10, 25, 47, 0.96) 0%, rgba(0, 66, 170, 0.9) 100%); background-color: var(--primary-color); color: var(--bg-white); padding-top: 100px; padding-bottom: 6rem; overflow: hidden; }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-badge { display: inline-block; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 6px 16px; border-radius: 50px; font-size: 0.875rem; font-weight: 500; margin-bottom: 1.5rem; backdrop-filter: blur(4px); color: var(--accent-color); }
+        .hero h1 { font-size: clamp(2.3rem, 4.5vw, 3.8rem); color: var(--bg-white); margin-bottom: 1.5rem; letter-spacing: -1px; }
+        .hero h1 span { color: var(--accent-color); }
+        .hero p { font-size: 1.2rem; color: rgba(255, 255, 255, 0.85); margin-bottom: 2.5rem; max-width: 650px; }
+        .hero-btns { display: flex; gap: 1rem; }
+        .hero-image-wrapper .image-placeholder-container { min-height: 400px; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%); color: rgba(255,255,255,0.7); }
 
         /* ==========================================================================
-           ABOUT US (NOSOTROS)
+           ABOUT US, SERVICES, PARTNERS
            ========================================================================== */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 4.5rem;
-            align-items: center;
-        }
+        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4.5rem; align-items: center; }
+        .about-text h2 { margin-bottom: 1.5rem; }
+        .about-text p { color: var(--text-light); margin-bottom: 1.25rem; font-size: 1.05rem; text-align: justify; }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+        .stat-item { padding: 1.5rem; background: var(--bg-white); border-radius: var(--border-radius); box-shadow: var(--shadow-sm); border-left: 4px solid var(--secondary-color); }
+        .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--primary-color); margin-bottom: 0.25rem; }
+        .stat-label { font-size: 0.85rem; color: var(--text-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .about-image-wrapper .image-placeholder-container { min-height: 380px; }
 
-        .about-text h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            color: var(--text-light);
-            margin-bottom: 1.25rem;
-            font-size: 1.05rem;
-            text-align: justify;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            padding: 1.5rem;
-            background: var(--bg-white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .stat-number {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 0.25rem;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .about-image-wrapper .image-placeholder-container {
-            min-height: 380px;
-        }
-
-        /* ==========================================================================
-           SERVICES (MAIN LANDING)
-           ========================================================================== */
-        .services {
-            background-color: var(--bg-white);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--bg-light);
-            padding: 2.5rem 2rem;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.04);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--secondary-color);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-            background: var(--bg-white);
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-icon {
-            width: 55px;
-            height: 55px;
-            background: rgba(0, 102, 255, 0.08);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: var(--secondary-color);
-        }
-
-        .service-icon svg {
-            width: 26px;
-            height: 26px;
-            fill: currentColor;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            text-transform: capitalize;
-        }
-
-        .service-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .service-card-actions {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: auto;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 1rem;
-        }
-
-        .service-link {
-            color: var(--text-light);
-            font-weight: 500;
-            font-size: 0.85rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .service-link:hover {
-            color: var(--primary-color);
-        }
+        .services { background-color: var(--bg-white); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .service-card { background: var(--bg-light); padding: 2.5rem 2rem; border-radius: var(--border-radius); transition: var(--transition); border: 1px solid rgba(0,0,0,0.04); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--secondary-color); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); background: var(--bg-white); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon { width: 55px; height: 55px; background: rgba(0, 102, 255, 0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--secondary-color); }
+        .service-icon svg { width: 26px; height: 26px; fill: currentColor; }
+        .service-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; text-transform: capitalize; }
+        .service-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1; }
+        .service-card-actions { display: flex; align-items: center; justify-content: space-between; margin-top: auto; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1rem; }
+        .service-link { color: var(--text-light); font-weight: 500; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 5px; }
+        .service-link:hover { color: var(--primary-color); }
 
         /* ==========================================================================
            INDEPENDENT SAAS VIEW: PORTAL DE SOLUCIONES TI
            ========================================================================== */
-        #portal-view {
-            background-color: var(--portal-bg);
-            min-height: 100vh;
-            padding-top: 80px; /* Space for the header */
-            display: flex;
-        }
+        #portal-view { background-color: var(--portal-bg); min-height: 100vh; padding-top: 80px; display: flex; }
+        .portal-sidebar { width: 260px; background: var(--bg-white); border-right: 1px solid var(--portal-border); height: calc(100vh - 80px); position: fixed; top: 80px; left: 0; overflow-y: auto; padding: 2rem 1.5rem; }
+        .portal-sidebar-title { font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: var(--text-light); letter-spacing: 1px; margin-bottom: 1.5rem; }
+        .portal-nav { list-style: none; }
+        .portal-nav li { margin-bottom: 0.5rem; }
+        .portal-nav a { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 6px; color: var(--text-dark); font-size: 0.95rem; font-weight: 500; transition: var(--transition); }
+        .portal-nav a:hover, .portal-nav a.active { background: rgba(0, 102, 255, 0.08); color: var(--secondary-color); }
+        .portal-nav svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+        .portal-back-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; background: var(--primary-color); color: white; border-radius: 6px; text-align: center; font-weight: 600; margin-bottom: 2rem; cursor: pointer; transition: var(--transition); border: none; }
+        .portal-back-btn:hover { background: var(--secondary-color); }
+        .portal-main { flex-grow: 1; margin-left: 260px; padding: 3rem 4rem; max-width: 1400px; }
+        .portal-header-area { margin-bottom: 3rem; border-bottom: 1px solid var(--portal-border); padding-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: flex-end; }
+        .portal-header-area h1 { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        .portal-header-area p { color: var(--text-light); font-size: 1.05rem; }
 
-        /* Portal Sidebar */
-        .portal-sidebar {
-            width: 260px;
-            background: var(--bg-white);
-            border-right: 1px solid var(--portal-border);
-            height: calc(100vh - 80px);
-            position: fixed;
-            top: 80px;
-            left: 0;
-            overflow-y: auto;
-            padding: 2rem 1.5rem;
-        }
-
-        .portal-sidebar-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: var(--text-light);
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-        }
-
-        .portal-nav {
-            list-style: none;
-        }
-
-        .portal-nav li {
-            margin-bottom: 0.5rem;
-        }
-
-        .portal-nav a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 12px;
-            border-radius: 6px;
-            color: var(--text-dark);
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .portal-nav a:hover, .portal-nav a.active {
-            background: rgba(0, 102, 255, 0.08);
-            color: var(--secondary-color);
-        }
-
-        .portal-nav svg {
-            width: 18px;
-            height: 18px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-        }
-
-        .portal-back-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 12px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 6px;
-            text-align: center;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-        }
+        .mp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2.5rem; }
+        .mp-card { background: var(--bg-white); border: 1px solid var(--portal-border); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; transition: var(--transition); position: relative; }
+        .mp-card:hover { box-shadow: var(--shadow-md); border-color: #CBD5E1; transform: translateY(-3px); }
+        .mp-card.highlight { border-color: var(--secondary-color); box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1); }
+        .mp-header { display: flex; align-items: center; gap: 15px; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #F1F5F9; }
+        .mp-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+        .mp-icon svg { width: 24px; height: 24px; fill: currentColor; }
+        .mp-header h3 { font-size: 1.25rem; margin: 0; color: var(--primary-color); line-height: 1.3; }
+        .mp-desc { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem; }
+        .mp-config-group { margin-bottom: 1.2rem; }
+        .mp-config-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-light); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .mp-select { width: 100%; padding: 10px 12px; border: 1px solid #CBD5E1; border-radius: 6px; font-family: inherit; font-size: 0.95rem; color: var(--text-dark); background-color: var(--bg-white); cursor: pointer; outline: none; transition: border-color 0.2s; }
+        .mp-select:focus { border-color: var(--secondary-color); box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1); }
+        .mp-input { width: 100%; padding: 10px 12px; border: 1px solid #CBD5E1; border-radius: 6px; font-family: inherit; font-size: 0.95rem; }
         
-        .portal-back-btn:hover {
-            background: var(--secondary-color);
-        }
+        .mp-price-display { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid #F1F5F9; display: flex; justify-content: space-between; align-items: flex-end; }
+        .mp-price-label { font-size: 0.85rem; color: var(--text-light); font-weight: 600; }
+        .mp-price-value { font-size: 1.75rem; font-weight: 800; color: var(--primary-color); }
+        .mp-price-value span { font-size: 1rem; font-weight: 500; color: var(--text-light); }
+        .btn-add-cart { width: 100%; margin-top: 1.5rem; background-color: var(--bg-light); color: var(--primary-color); border: 1px solid #CBD5E1; padding: 12px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; justify-content: center; align-items: center; gap: 8px; }
+        .btn-add-cart:hover { background-color: var(--secondary-color); color: white; border-color: var(--secondary-color); }
 
-        /* Portal Main Content */
-        .portal-main {
-            flex-grow: 1;
-            margin-left: 260px; /* offset sidebar */
-            padding: 3rem 4rem;
-            max-width: 1400px;
-        }
-
-        .portal-header-area {
-            margin-bottom: 3rem;
-            border-bottom: 1px solid var(--portal-border);
-            padding-bottom: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .portal-header-area h1 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .portal-header-area p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-        }
-
-        .mp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .mp-card {
-            background: var(--bg-white);
-            border: 1px solid var(--portal-border);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            display: flex;
-            flex-direction: column;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .mp-card:hover {
-            box-shadow: var(--shadow-md);
-            border-color: #CBD5E1;
-            transform: translateY(-3px);
-        }
-
-        .mp-card.highlight {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
-        }
-
-        .mp-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #F1F5F9;
-        }
-
-        .mp-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .mp-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-        }
-
-        .mp-header h3 {
-            font-size: 1.25rem;
-            margin: 0;
-            color: var(--primary-color);
-            line-height: 1.3;
-        }
-
-        .mp-desc {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-
-        .mp-config-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .mp-config-group label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .mp-select {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #CBD5E1;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            background-color: var(--bg-white);
-            cursor: pointer;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .mp-select:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
-        }
-
-        .mp-input {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #CBD5E1;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .mp-price-display {
-            margin-top: auto;
-            padding-top: 1.5rem;
-            border-top: 1px solid #F1F5F9;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .mp-price-label {
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .mp-price-value {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--primary-color);
-        }
-
-        .mp-price-value span {
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text-light);
-        }
-
-        .btn-add-cart {
-            width: 100%;
-            margin-top: 1.5rem;
-            background-color: var(--bg-light);
-            color: var(--primary-color);
-            border: 1px solid #CBD5E1;
-            padding: 12px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-add-cart:hover {
-            background-color: var(--secondary-color);
-            color: white;
-            border-color: var(--secondary-color);
-        }
-
-        /* Cart Float over Portal */
-        .cart-float-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            z-index: 1000;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .cart-float-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .cart-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: var(--secondary-color);
-            color: white;
-            font-size: 0.8rem;
-            font-weight: bold;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid var(--bg-white);
-        }
-
-        /* Cart Sidebar */
-        .cart-sidebar {
-            position: fixed;
-            top: 0;
-            right: -450px; 
-            width: 100%;
-            max-width: 450px;
-            height: 100vh;
-            background-color: var(--bg-white);
-            box-shadow: -5px 0 25px rgba(0,0,0,0.1);
-            z-index: 1002;
-            transition: right 0.3s ease-in-out;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cart-sidebar.open {
-            right: 0;
-        }
-
-        .cart-header {
-            padding: 20px 25px;
-            background-color: var(--primary-color);
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cart-close {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 1.8rem;
-        }
-
-        .cart-body {
-            flex-grow: 1;
-            padding: 25px;
-            overflow-y: auto;
-            background-color: var(--portal-bg);
-        }
-
-        .cart-item {
-            background: var(--bg-white);
-            border: 1px solid var(--portal-border);
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            position: relative;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .cart-item-title {
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            padding-right: 20px;
-        }
-
-        .cart-item-details {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        .cart-item-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #F1F5F9;
-            padding-top: 10px;
-        }
-
-        .cart-qty-ctrl {
-            display: flex;
-            align-items: center;
-            border: 1px solid #CBD5E1;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .cart-qty-ctrl button {
-            background: #F1F5F9;
-            border: none;
-            padding: 6px 12px;
-            cursor: pointer;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .cart-qty-ctrl button:hover {
-            background: #E2E8F0;
-        }
-
-        .cart-qty-ctrl input {
-            width: 40px;
-            text-align: center;
-            border: none;
-            border-left: 1px solid #CBD5E1;
-            border-right: 1px solid #CBD5E1;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .cart-item-price {
-            font-weight: 800;
-            color: var(--primary-color);
-            font-size: 1.1rem;
-        }
-
-        .btn-remove-item {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: none;
-            border: none;
-            color: #94A3B8;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: color 0.2s;
-        }
-        
-        .btn-remove-item:hover {
-            color: #EF4444;
-        }
-
-        .cart-footer {
-            padding: 25px;
-            border-top: 1px solid var(--portal-border);
-            background-color: var(--bg-white);
-        }
-
-        .cart-total-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--primary-color);
-        }
-
-        .btn-checkout {
-            width: 100%;
-            background-color: #10B981; 
-            color: white;
-            border: none;
-            padding: 16px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
-        }
-
-        .btn-checkout:hover {
-            background-color: #059669;
-        }
-
-        .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 25, 47, 0.6);
-            z-index: 1001;
-            display: none;
-            backdrop-filter: blur(3px);
-        }
-        .cart-overlay.show {
-            display: block;
-        }
+        /* Cart & Sidebar */
+        .cart-float-btn { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background-color: var(--primary-color); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: var(--shadow-lg); z-index: 1000; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .cart-float-btn:hover { transform: scale(1.1); }
+        .cart-badge { position: absolute; top: -5px; right: -5px; background-color: var(--secondary-color); color: white; font-size: 0.8rem; font-weight: bold; width: 24px; height: 24px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: 2px solid var(--bg-white); }
+        .cart-sidebar { position: fixed; top: 0; right: -450px; width: 100%; max-width: 450px; height: 100vh; background-color: var(--bg-white); box-shadow: -5px 0 25px rgba(0,0,0,0.1); z-index: 1002; transition: right 0.3s ease-in-out; display: flex; flex-direction: column; }
+        .cart-sidebar.open { right: 0; }
+        .cart-header { padding: 20px 25px; background-color: var(--primary-color); color: white; display: flex; justify-content: space-between; align-items: center; }
+        .cart-close { background: none; border: none; color: white; cursor: pointer; font-size: 1.8rem; }
+        .cart-body { flex-grow: 1; padding: 25px; overflow-y: auto; background-color: var(--portal-bg); }
+        .cart-item { background: var(--bg-white); border: 1px solid var(--portal-border); border-radius: 8px; padding: 15px; margin-bottom: 15px; position: relative; box-shadow: var(--shadow-sm); }
+        .cart-item-title { font-weight: 700; color: var(--primary-color); margin-bottom: 5px; padding-right: 20px; }
+        .cart-item-details { font-size: 0.85rem; color: var(--text-light); margin-bottom: 15px; line-height: 1.4; }
+        .cart-item-controls { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #F1F5F9; padding-top: 10px; }
+        .cart-qty-ctrl { display: flex; align-items: center; border: 1px solid #CBD5E1; border-radius: 4px; overflow: hidden; }
+        .cart-qty-ctrl button { background: #F1F5F9; border: none; padding: 6px 12px; cursor: pointer; font-weight: bold; color: var(--primary-color); }
+        .cart-qty-ctrl button:hover { background: #E2E8F0; }
+        .cart-qty-ctrl input { width: 40px; text-align: center; border: none; border-left: 1px solid #CBD5E1; border-right: 1px solid #CBD5E1; font-size: 0.9rem; font-weight: 600; }
+        .cart-item-price { font-weight: 800; color: var(--primary-color); font-size: 1.1rem; }
+        .btn-remove-item { position: absolute; top: 12px; right: 12px; background: none; border: none; color: #94A3B8; cursor: pointer; font-size: 1.2rem; transition: color 0.2s; }
+        .btn-remove-item:hover { color: #EF4444; }
+        .cart-footer { padding: 25px; border-top: 1px solid var(--portal-border); background-color: var(--bg-white); }
+        .cart-total-row { display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 1.3rem; font-weight: 800; color: var(--primary-color); }
+        .btn-checkout { width: 100%; background-color: #10B981; color: white; border: none; padding: 16px; border-radius: 8px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: background-color 0.2s; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2); }
+        .btn-checkout:hover { background-color: #059669; }
+        .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 25, 47, 0.6); z-index: 1001; display: none; backdrop-filter: blur(3px); }
+        .cart-overlay.show { display: block; }
 
         /* Order Modal */
-        .order-modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            background: white;
-            width: 90%;
-            max-width: 550px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
-            z-index: 1003;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .order-modal.open {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .order-modal-header {
-            background-color: #10B981;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-
-        .order-modal-header svg {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 10px;
-        }
-
-        .order-modal-body {
-            padding: 30px;
-            max-height: 60vh;
-            overflow-y: auto;
-            background: var(--bg-light);
-        }
-
-        .order-meta {
-            text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #CBD5E1;
-        }
-
-        .order-meta h4 {
-            color: var(--text-dark);
-            font-size: 1.4rem;
-            margin-bottom: 5px;
-        }
-
-        .order-meta p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        .order-summary-item {
-            background: var(--bg-white);
-            padding: 15px;
-            border: 1px solid var(--portal-border);
-            border-radius: 8px;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-        }
-
-        .order-summary-item strong {
-            display: block;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            font-size: 1.05rem;
-        }
-
-        .order-modal-footer {
-            padding: 25px;
-            text-align: center;
-            border-top: 1px solid var(--portal-border);
-            background: var(--bg-white);
-        }
-
-        .btn-close-modal {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 35px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .btn-close-modal:hover {
-            background-color: var(--secondary-color);
-        }
+        .order-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); background: white; width: 90%; max-width: 550px; border-radius: 12px; box-shadow: var(--shadow-lg); z-index: 1003; opacity: 0; pointer-events: none; transition: all 0.3s ease; display: flex; flex-direction: column; overflow: hidden; }
+        .order-modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+        .order-modal-header { background-color: #10B981; color: white; padding: 25px; text-align: center; }
+        .order-modal-header svg { width: 60px; height: 60px; margin-bottom: 10px; }
+        .order-modal-body { padding: 30px; max-height: 60vh; overflow-y: auto; background: var(--bg-light); }
+        .order-meta { text-align: center; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed #CBD5E1; }
+        .order-meta h4 { color: var(--text-dark); font-size: 1.4rem; margin-bottom: 5px; }
+        .order-meta p { color: var(--text-light); font-size: 0.95rem; }
+        .order-summary-item { background: var(--bg-white); padding: 15px; border: 1px solid var(--portal-border); border-radius: 8px; margin-bottom: 12px; font-size: 0.95rem; color: var(--text-dark); }
+        .order-summary-item strong { display: block; color: var(--primary-color); margin-bottom: 5px; font-size: 1.05rem; }
+        .order-modal-footer { padding: 25px; text-align: center; border-top: 1px solid var(--portal-border); background: var(--bg-white); }
+        .btn-close-modal { background-color: var(--primary-color); color: white; border: none; padding: 12px 35px; border-radius: 8px; font-weight: 600; font-size: 1.05rem; cursor: pointer; transition: var(--transition); }
+        .btn-close-modal:hover { background-color: var(--secondary-color); }
 
         /* ==========================================================================
            PARTNERS, TALENTS, CONTACT (Landing)
@@ -1149,31 +258,18 @@
         .partners-clients { background-color: var(--bg-light); }
         .brand-block { margin-bottom: 4rem; }
         .brand-block:last-child { margin-bottom: 0; }
-        .brand-block h3 {
-            font-size: 1.5rem; margin-bottom: 2rem; text-align: center;
-            color: var(--text-light); font-weight: 600; position: relative;
-        }
-        .brand-block h3::after {
-            content: ''; display: block; width: 50px; height: 3px;
-            background: var(--secondary-color); margin: 0.5rem auto 0; border-radius: 2px;
-        }
+        .brand-block h3 { font-size: 1.5rem; margin-bottom: 2rem; text-align: center; color: var(--text-light); font-weight: 600; position: relative; }
+        .brand-block h3::after { content: ''; display: block; width: 50px; height: 3px; background: var(--secondary-color); margin: 0.5rem auto 0; border-radius: 2px; }
         .logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
         .logo-grid .image-placeholder-container { min-height: 100px; padding: 1rem; background: var(--bg-white); border-radius: var(--border-radius); }
 
         .talents { background-color: var(--bg-white); }
         .talents-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4rem; align-items: center; }
         .talent-image-wrapper .image-placeholder-container { min-height: 400px; }
-        .talent-badge-generation {
-            display: inline-block; background: rgba(0, 102, 255, 0.1); color: var(--secondary-color);
-            padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700;
-            margin-bottom: 1rem; text-transform: uppercase;
-        }
+        .talent-badge-generation { display: inline-block; background: rgba(0, 102, 255, 0.1); color: var(--secondary-color); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; }
         .talents-content h2 { margin-bottom: 1.5rem; }
         .talents-content p { color: var(--text-light); font-size: 1.05rem; margin-bottom: 1.5rem; }
-        .talent-callout {
-            background-color: var(--bg-light); border-left: 4px solid var(--accent-color);
-            padding: 1.5rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; margin-bottom: 2rem;
-        }
+        .talent-callout { background-color: var(--bg-light); border-left: 4px solid var(--accent-color); padding: 1.5rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; margin-bottom: 2rem; }
         .talent-callout h4 { font-size: 1.1rem; color: var(--primary-color); margin-bottom: 0.5rem; }
         .talent-callout p { font-size: 0.95rem; margin-bottom: 0; color: var(--text-dark); }
         .talent-email-box { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--secondary-color); font-size: 1.1rem; }
@@ -1183,10 +279,7 @@
         .contact-info h2 { margin-bottom: 1rem; }
         .contact-info > p { color: var(--text-light); margin-bottom: 2.5rem; font-size: 1.05rem; }
         .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 1.75rem; }
-        .info-icon {
-            width: 42px; height: 42px; background: rgba(0, 102, 255, 0.08); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0;
-        }
+        .info-icon { width: 42px; height: 42px; background: rgba(0, 102, 255, 0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); flex-shrink: 0; }
         .info-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; }
         .info-text h4 { font-size: 1rem; margin-bottom: 0.25rem; color: var(--primary-color); font-weight: 600; }
         .info-text p { color: var(--text-light); font-size: 0.95rem; }
@@ -1223,9 +316,7 @@
             .hero-btns { justify-content: center; }
             .hero-image-wrapper, .about-image-wrapper, .talent-image-wrapper { max-width: 550px; margin: 0 auto; width: 100%; }
             .about-image-wrapper, .talent-image-wrapper { order: -1; }
-            
-            /* Portal Responsive */
-            .portal-sidebar { display: none; /* Hide sidebar on tablet/mobile */ }
+            .portal-sidebar { display: none; }
             .portal-main { margin-left: 0; padding: 2rem; }
         }
 
@@ -1250,6 +341,63 @@
             .cart-sidebar { max-width: 100%; right: -100%; }
             .portal-main { padding: 1rem; }
             .portal-header-area h1 { font-size: 1.8rem; }
+        }
+
+        /* ==========================================================================
+           ASISTENTE VIRTUAL DARA
+           ========================================================================== */
+        .dara-float-btn {
+            position: fixed; bottom: 30px; left: 30px; background: linear-gradient(135deg, #00E5FF 0%, #0066FF 100%);
+            color: white; border-radius: 50px; display: flex; align-items: center; gap: 10px; padding: 12px 20px;
+            cursor: pointer; box-shadow: 0 4px 15px rgba(0, 102, 255, 0.4); z-index: 1000; font-weight: 700;
+            font-size: 1rem; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); animation: pulse-dara 2s infinite;
+        }
+        @keyframes pulse-dara {
+            0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 229, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+        }
+        .dara-float-btn:hover { transform: scale(1.05); animation: none; }
+        .dara-float-btn svg { width: 24px; height: 24px; fill: currentColor; }
+
+        .dara-window {
+            position: fixed; bottom: 100px; left: 30px; width: 350px; height: 500px; background: var(--bg-white);
+            border-radius: 12px; box-shadow: var(--shadow-lg); z-index: 1004; display: flex; flex-direction: column;
+            overflow: hidden; border: 1px solid var(--portal-border); opacity: 0; pointer-events: none;
+            transform: translateY(20px); transition: all 0.3s ease;
+        }
+        .dara-window.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+        .dara-header { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .dara-header-info { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+        .dara-header-info svg { width: 24px; height: 24px; fill: currentColor; }
+        .dara-close { background: none; border: none; color: white; cursor: pointer; font-size: 1.5rem; line-height: 1; }
+
+        .dara-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #F8FAFC; display: flex; flex-direction: column; gap: 12px; }
+        .msg { max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 0.9rem; line-height: 1.4; word-wrap: break-word; }
+        .msg.dara { background: var(--bg-white); color: var(--text-dark); align-self: flex-start; border: 1px solid var(--portal-border); border-bottom-left-radius: 2px; }
+        .msg.user { background: var(--secondary-color); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+
+        .dara-input-area { padding: 15px; background: var(--bg-white); border-top: 1px solid var(--portal-border); display: flex; flex-direction: column; gap: 10px; }
+        .dara-input-controls { display: flex; gap: 8px; }
+        .dara-input { flex-grow: 1; padding: 10px; border: 1px solid #CBD5E1; border-radius: 20px; outline: none; font-family: inherit; font-size: 0.9rem; }
+        .dara-input:focus { border-color: var(--secondary-color); }
+        .dara-btn { width: 38px; height: 38px; border-radius: 50%; border: none; background: var(--primary-color); color: white; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: background 0.2s; }
+        .dara-btn:hover { background: var(--secondary-color); }
+        
+        .dara-btn.mic { background: #10B981; }
+        .dara-btn.mic:hover { background: #059669; }
+        .dara-btn.mic.listening { background: #EF4444; animation: pulse-mic 1s infinite alternate; }
+
+        @keyframes pulse-mic {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            100% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+        }
+        .dara-status { font-size: 0.75rem; color: var(--text-light); text-align: center; height: 15px; font-weight: 600;}
+
+        @media (max-width: 768px) {
+            .dara-window { width: 90%; left: 5%; bottom: 90px; height: 60vh; }
+            .dara-float-btn { bottom: 20px; left: 20px; padding: 10px 15px; }
         }
     </style>
 </head>
@@ -1350,7 +498,7 @@
                         <p>Sistemas integrados para la emisión de comprobantes fiscales digitales de acuerdo a la normatividad vigente.</p>
                         <div class="service-card-actions">
                             <a href="#contacto" class="service-link">Saber más &rarr;</a>
-                            <a onclick="openPortal('conf-facturacion')" class="btn-outline-dark">Configurar en línea</a>
+                            <a onclick="openPortal('conf-facturacion')" class="btn-outline-dark">Contratar en línea</a>
                         </div>
                     </div>
 
@@ -1360,7 +508,7 @@
                         <p>Estructura web colaborativa centralizada para agilizar entregas, cotizaciones y la cadena de suministro externa.</p>
                         <div class="service-card-actions">
                             <a href="#contacto" class="service-link">Saber más &rarr;</a>
-                            <a onclick="openPortal('conf-portal')" class="btn-outline-dark">Configurar en línea</a>
+                            <a onclick="openPortal('conf-portal')" class="btn-outline-dark">Contratar en línea</a>
                         </div>
                     </div>
 
@@ -1370,7 +518,7 @@
                         <p>Planificación de recursos empresariales para unificar las finanzas, compras y planeación en una sola suite central.</p>
                         <div class="service-card-actions">
                             <a href="#contacto" class="service-link">Saber más &rarr;</a>
-                            <a onclick="openPortal()" class="btn-outline-dark">Ver Catálogo</a>
+                            <a onclick="openPortal()" class="btn-outline-dark">Ver Soluciones</a>
                         </div>
                     </div>
 
@@ -1410,7 +558,7 @@
                         <p>Infraestructura Cloud privada adaptada a las cargas específicas de trabajo de su organización, ágil y escalable.</p>
                         <div class="service-card-actions">
                             <a href="#contacto" class="service-link">Saber más &rarr;</a>
-                            <a onclick="openPortal('conf-cloud')" class="btn-outline-dark">Configurar Instancia</a>
+                            <a onclick="openPortal('conf-cloud')" class="btn-outline-dark">Contratar Instancia</a>
                         </div>
                     </div>
 
@@ -1430,7 +578,7 @@
                         <p>Entorno digital transparente para que sus usuarios consulten estados de cuenta, soportes y servicios activos.</p>
                         <div class="service-card-actions">
                             <a href="#contacto" class="service-link">Saber más &rarr;</a>
-                            <a onclick="openPortal('conf-portal')" class="btn-outline-dark">Configurar en línea</a>
+                            <a onclick="openPortal('conf-portal')" class="btn-outline-dark">Contratar en línea</a>
                         </div>
                     </div>
 
@@ -1450,7 +598,7 @@
                         <p>Políticas de backup periódicas automáticas cifradas que resguardan la data ante pérdidas humanas o técnicas.</p>
                         <div class="service-card-actions">
                             <a href="#contacto" class="service-link">Saber más &rarr;</a>
-                            <a onclick="openPortal('conf-backup')" class="btn-outline-dark">Configurar BaaS</a>
+                            <a onclick="openPortal('conf-backup')" class="btn-outline-dark">Contratar BaaS</a>
                         </div>
                     </div>
 
@@ -1460,7 +608,7 @@
                         <p>Administración y tuning experto de bases de datos para garantizar altas velocidades de respuesta y queries óptimos.</p>
                         <div class="service-card-actions">
                             <a href="#contacto" class="service-link">Saber más &rarr;</a>
-                            <a onclick="openPortal('conf-dba')" class="btn-outline-dark">Cotizar Servicio</a>
+                            <a onclick="openPortal('conf-dba')" class="btn-outline-dark">Contratar Servicio</a>
                         </div>
                     </div>
 
@@ -1480,7 +628,7 @@
                         <p>Gestión operativa avanzada de sistemas operativos, configuración VLAN, SSH, hardware Cisco y entornos virtuales.</p>
                         <div class="service-card-actions">
                             <a href="#contacto" class="service-link">Saber más &rarr;</a>
-                            <a onclick="openPortal('conf-vpn')" class="btn-outline-dark">Configurar Red/VPN</a>
+                            <a onclick="openPortal('conf-vpn')" class="btn-outline-dark">Contratar Red/VPN</a>
                         </div>
                     </div>
 
@@ -1490,7 +638,7 @@
                         <p>Instalación de firewalls, software antimalware empresarial, auditorías y perímetros lógicos de resguardo ISO 27001.</p>
                         <div class="service-card-actions">
                             <a href="#contacto" class="service-link">Saber más &rarr;</a>
-                            <a onclick="openPortal('conf-cyber')" class="btn-outline-dark">Ciberseguridad</a>
+                            <a onclick="openPortal('conf-cyber')" class="btn-outline-dark">Contratar SOC</a>
                         </div>
                     </div>
                 </div>
@@ -1608,6 +756,36 @@
             </div>
         </section>
 
+        <section style="padding: 60px 20px; background: #0a1628; text-align: center;">
+            <h2 style="color: white; font-size: 28px; margin-bottom: 10px;">
+                Nuestra Campaña en X
+            </h2>
+            <p style="color: #4a7fc0; margin-bottom: 40px; font-size: 16px;">
+                Síguenos en @EjemploENDtoEND
+            </p>
+            
+            <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
+            
+                <blockquote class="twitter-tweet" data-media-max-width="560">
+                    <p lang="es" dir="ltr">💡 ¿Qué pasaría si comprar tecnología empresarial<br>fuera tan fácil como comprar en Amazon?<br>Entra. Elige tus servicios.<br>→ Facturación<br>→ Ciberseguridad<br>→ Nube Privada<br>→ Soporte Técnico<br>→ ERP, y más...<br>El precio se actualiza solo.<br>Sin llamadas. Sin vendedores. Sin esperas. <a href="https://t.co/yruzKxxqvv">pic.twitter.com/yruzKxxqvv</a></p>
+                    &mdash; EjemploENDtoEND (@EjemploENDtoEND)
+                    <a href="https://x.com/EjemploENDtoEND/status/2063817127744634910?ref_src=twsrc%5Etfw">June 8, 2026</a>
+                </blockquote>
+            
+                <blockquote class="twitter-tweet" data-media-max-width="560">
+                    <p lang="es" dir="ltr">Así es End to End Management. 👇 🌐 
+                    <a href="https://t.co/NxSdOMaEJh">https://t.co/NxSdOMaEJh</a> 
+                    <a href="https://x.com/hashtag/MakeITReal?src=hash&amp;ref_src=twsrc%5Etfw">#MakeITReal</a>
+                    <a href="https://x.com/hashtag/EcomerceTI?src=hash&amp;ref_src=twsrc%5Etfw">#EcomerceTI</a>
+                    <a href="https://x.com/hashtag/InnovaciónEmpresarial?src=hash&amp;ref_src=twsrc%5Etfw">#InnovaciónEmpresarial</a>
+                    <a href="https://x.com/hashtag/TransformaciónDigital?src=hash&amp;ref_src=twsrc%5Etfw">#TransformaciónDigital</a>
+                    <a href="https://t.co/bzuarZeorF">pic.twitter.com/bzuarZeorF</a></p>
+                    &mdash; EjemploENDtoEND (@EjemploENDtoEND) 
+                    <a href="https://x.com/EjemploENDtoEND/status/2063817342555955348?ref_src=twsrc%5Etfw">June 8, 2026</a>
+                </blockquote>
+            </div>
+        </section>
+
         <footer>
             <div class="container">
                 <div class="footer-grid">
@@ -1669,7 +847,7 @@
             <div class="portal-header-area">
                 <div>
                     <h1>Centro de Soluciones TI</h1>
-                    <p>Catálogo unificado de servicios empresariales. Configure sus requerimientos y obtenga cotizaciones transparentes en tiempo real.</p>
+                    <p>Catálogo unificado de servicios empresariales. Configure sus requerimientos y obtenga suscripciones transparentes en tiempo real.</p>
                 </div>
             </div>
 
@@ -1694,10 +872,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="fact-price-val">800.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="fact-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Facturación Electrónica', 'fact')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Facturación Electrónica', 'fact')">Agregar al carrito</button>
                 </div>
 
                 <div class="mp-card" id="conf-portal">
@@ -1725,10 +903,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="portal-price-val">1500.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="portal-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Portal de Proveedores', 'portal')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Portal de Proveedores', 'portal')">Agregar al carrito</button>
                 </div>
 
             </div>
@@ -1778,10 +956,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="cloud-price-val">650.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="cloud-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Instancia ETE Cloud', 'cloud')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Instancia ETE Cloud', 'cloud')">Agregar al carrito</button>
                 </div>
 
                 <div class="mp-card" id="conf-backup">
@@ -1809,10 +987,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="baas-price-val">300.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="baas-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Backup as a Service (BaaS)', 'baas')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Backup as a Service (BaaS)', 'baas')">Agregar al carrito</button>
                 </div>
 
                 <div class="mp-card" id="conf-dba">
@@ -1839,10 +1017,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="dba-price-val">1000.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="dba-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Servicio DBA Gestionado', 'dba')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Servicio DBA Gestionado', 'dba')">Agregar al carrito</button>
                 </div>
 
             </div>
@@ -1884,10 +1062,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="desk-price-val">1000.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="desk-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Mesa de Servicio TI', 'servicedesk')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Mesa de Servicio TI', 'servicedesk')">Agregar al carrito</button>
                 </div>
 
                 <div class="mp-card" id="conf-soportepc">
@@ -1914,10 +1092,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="soporte-price-val">800.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="soporte-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Soporte Endpoints (PC/Laptop)', 'soportepc')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Soporte Endpoints (PC/Laptop)', 'soportepc')">Agregar al carrito</button>
                 </div>
             </div>
 
@@ -1945,10 +1123,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="m365-price-val">1200.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="m365-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Licenciamiento Microsoft 365', 'm365')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Licenciamiento Microsoft 365', 'm365')">Agregar al carrito</button>
                 </div>
 
             </div>
@@ -1979,10 +1157,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="vpn-price-val">500.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="vpn-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Redes y VPN Empresarial', 'vpn')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Redes y VPN Empresarial', 'vpn')">Agregar al carrito</button>
                 </div>
             </div>
 
@@ -2013,10 +1191,10 @@
                     </div>
 
                     <div class="mp-price-display">
-                        <span class="mp-price-label">Mensualidad</span>
-                        <div class="mp-price-value">$<span id="cyber-price-val">2000.00</span> <span>MXN</span></div>
+                        <span class="mp-price-label">Suscripción Mensual</span>
+                        <div class="mp-price-value"><span id="cyber-price-val"></span></div>
                     </div>
-                    <button class="btn-add-cart" onclick="addServiceToCart('Ciberseguridad SOC / EDR', 'cyber')">Agregar a la orden</button>
+                    <button class="btn-add-cart" onclick="addServiceToCart('Ciberseguridad SOC / EDR', 'cyber')">Agregar al carrito</button>
                 </div>
 
             </div>
@@ -2033,53 +1211,82 @@
 
     <div class="cart-sidebar" id="cart-sidebar">
         <div class="cart-header">
-            <h3 style="margin:0; font-size:1.3rem;">Su Orden de Servicios</h3>
+            <h3 style="margin:0; font-size:1.3rem;">Servicios a Contratar</h3>
             <button class="cart-close" onclick="toggleCart()">&times;</button>
         </div>
         <div class="cart-body" id="cart-items-container">
-            <p style="text-align:center; color:gray; margin-top:50px;">Su carrito está vacío.</p>
+            <p style="text-align:center; color:gray; margin-top:50px;">Aún no has seleccionado servicios para contratar.</p>
         </div>
         <div class="cart-footer">
             <div class="cart-total-row">
-                <span>Total Estimado:</span>
-                <span id="cart-total-price">$0.00 MXN</span>
+                <span>Total a Contratar:</span>
+                <span id="cart-total-price">USD $0.00</span>
             </div>
-            <button class="btn-checkout" onclick="checkout()">Generar Orden de Compra</button>
+            <button class="btn-checkout" onclick="checkout()">Confirmar Contratación</button>
         </div>
     </div>
 
     <div class="order-modal" id="order-modal">
         <div class="order-modal-header">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <h2 style="color:white; margin:0; font-size:1.5rem;">Orden Generada Correctamente</h2>
+            <h2 style="color:white; margin:0; font-size:1.5rem;">Contratación Exitosa</h2>
         </div>
         <div class="order-modal-body">
             <div class="order-meta">
-                <h4 id="modal-order-number">Orden #20260000</h4>
+                <h4 id="modal-order-number">Orden de Servicio #20260000</h4>
                 <p id="modal-order-date">Fecha: </p>
             </div>
-            <div id="modal-order-items">
-                </div>
-            <h3 style="text-align:right; margin-top:20px; color:var(--primary-color); font-size:1.5rem;">Total: <span id="modal-order-total">$0.00</span> MXN</h3>
+            <div id="modal-order-items"></div>
+            <h3 style="text-align:right; margin-top:20px; color:var(--primary-color); font-size:1.5rem;">Inversión Mensual: <span id="modal-order-total">USD $0.00</span></h3>
         </div>
         <div class="order-modal-footer">
             <button class="btn-close-modal" onclick="closeOrderModal()">Aceptar y Cerrar</button>
         </div>
     </div>
 
+    <div class="dara-float-btn" onclick="toggleDara()">
+        <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+        <span>Dara IA</span>
+    </div>
+
+    <div class="dara-window" id="dara-window">
+        <div class="dara-header">
+            <div class="dara-header-info">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                Asistente Virtual Dara
+            </div>
+            <button class="dara-close" onclick="toggleDara()">&times;</button>
+        </div>
+        <div class="dara-messages" id="dara-messages">
+            <div class="msg dara">¡Hola! Soy Dara. Puedo ayudarte a navegar por el sitio, buscar servicios o abrir configuradores. ¿Qué necesitas?</div>
+        </div>
+        <div class="dara-status" id="dara-status">Estado: Lista para ayudarte</div>
+        <div class="dara-input-area">
+            <div class="dara-input-controls">
+                <input type="text" id="dara-text-input" class="dara-input" placeholder="Escribe o usa el micrófono..." onkeypress="if(event.key === 'Enter') sendDaraText()">
+                <button class="dara-btn mic" id="dara-mic-btn" onclick="startDaraVoice()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+                </button>
+                <button class="dara-btn" onclick="sendDaraText()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+
     <script>
-        // DOM Elements
+        // ================== NAVEGACIÓN Y VISTAS ==================
         const landingView = document.getElementById('landing-view');
         const portalView = document.getElementById('portal-view');
         const header = document.getElementById('header');
 
-        // ================== NAVEGACIÓN Y VISTAS ==================
         function openPortal(targetId = null) {
             landingView.style.display = 'none';
-            header.style.display = 'none'; // Ocultar header original para la vista SaaS
+            header.style.display = 'none'; 
             portalView.style.display = 'flex';
             
-            // Highlight nav link just in case
             document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-link'));
             document.getElementById('nav-portal').classList.add('active-link');
 
@@ -2087,7 +1294,6 @@
                 const targetEl = document.getElementById(targetId);
                 if(targetEl) {
                     targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    // Animación de highlight sutil
                     targetEl.classList.add('highlight');
                     setTimeout(() => targetEl.classList.remove('highlight'), 2000);
                 }
@@ -2103,13 +1309,11 @@
             
             document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active-link'));
             
-            // Delay para que aplique el scroll al ancla
             setTimeout(() => {
                 window.location.hash = hashAnchor;
             }, 50);
         }
 
-        // Setup inicial nav
         document.addEventListener('DOMContentLoaded', () => {
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
@@ -2138,7 +1342,6 @@
             window.addEventListener('scroll', handleScroll);
             handleScroll(); 
 
-            // Intersection Observer
             const fadeElements = document.querySelectorAll('.fade-up');
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
@@ -2151,29 +1354,26 @@
             }, observerOptions);
             fadeElements.forEach(element => { observer.observe(element); });
             
-            // Iniciar calculadoras
             calcAll();
         });
 
-        // ================== LÓGICA DE PRECIOS DEL PORTAL ==================
-        let currentPrices = {
-            fact: 0, portal: 0, cloud: 0, baas: 0, dba: 0, 
-            servicedesk: 0, soportepc: 0, m365: 0, vpn: 0, cyber: 0
-        };
+        // ================== LÓGICA DE PRECIOS DEL PORTAL (USD) ==================
+        let currentPrices = { fact: 0, portal: 0, cloud: 0, baas: 0, dba: 0, servicedesk: 0, soportepc: 0, m365: 0, vpn: 0, cyber: 0 };
 
         function calcAll() {
             calcFacturacion(); calcPortal(); calcCloud(); calcBaaS(); calcDBA();
             calcServiceDesk(); calcSoportePC(); calcM365(); calcVPN(); calcCyber();
         }
 
-        const formatMoney = (amount) => parseFloat(amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        // Formato USD
+        const formatMoney = (amount) => 'USD $' + parseFloat(amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
         function calcFacturacion() {
             const plan = document.getElementById('fact-users').value;
-            let price = 800; 
-            if (plan === 'inter') price += 700;
-            if (plan === 'pro') price += 1500;
-            if (plan === 'max') price += 3200;
+            let price = 49; 
+            if (plan === 'inter') price += 30;
+            if (plan === 'pro') price += 70;
+            if (plan === 'max') price += 150;
             currentPrices.fact = price;
             document.getElementById('fact-price-val').innerText = formatMoney(price);
         }
@@ -2181,12 +1381,11 @@
         function calcPortal() {
             const plan = document.getElementById('portal-plan').value;
             const users = document.getElementById('portal-users').value;
-            let price = 0;
-            if (plan === 'basic') price += 1500;
-            if (plan === 'pro') price += 3000;
-            if (plan === 'enterprise') price += 5500;
-            if (users === '500') price += 1000;
-            if (users === 'unlimited') price += 3000;
+            let price = 79;
+            if (plan === 'pro') price += 149;
+            if (plan === 'enterprise') price += 279;
+            if (users === '500') price += 49;
+            if (users === 'unlimited') price += 149;
             currentPrices.portal = price;
             document.getElementById('portal-price-val').innerText = formatMoney(price);
         }
@@ -2196,15 +1395,15 @@
             const ram = parseInt(document.getElementById('cloud-ram').value);
             const vcpu = parseInt(document.getElementById('cloud-vcpu').value);
             const disk = document.getElementById('cloud-disk').value;
-            let price = 250; 
-            if (os === 'windows') price += 600; 
-            price += (ram * 40);
-            price += (vcpu * 80);
-            if (disk === '100') price += 150;
-            if (disk === '250') price += 300;
-            if (disk === '500') price += 500;
-            if (disk === '1000') price += 900;
-            if (disk === '2000') price += 1600;
+            let price = 15; 
+            if (os === 'windows') price += 30; 
+            price += (ram * 2);
+            price += (vcpu * 4);
+            if (disk === '100') price += 8;
+            if (disk === '250') price += 15;
+            if (disk === '500') price += 25;
+            if (disk === '1000') price += 45;
+            if (disk === '2000') price += 80;
             currentPrices.cloud = price;
             document.getElementById('cloud-price-val').innerText = formatMoney(price);
         }
@@ -2212,11 +1411,11 @@
         function calcBaaS() {
             const space = document.getElementById('baas-space').value;
             const freq = document.getElementById('baas-freq').value;
-            let price = 300;
-            if (space === '1000') price += 400;
-            if (space === '5000') price += 1500;
-            if (space === '10000') price += 2800;
-            if (freq === 'hourly') price += 800;
+            let price = 19;
+            if (space === '1000') price += 25;
+            if (space === '5000') price += 75;
+            if (space === '10000') price += 140;
+            if (freq === 'hourly') price += 40;
             currentPrices.baas = price;
             document.getElementById('baas-price-val').innerText = formatMoney(price);
         }
@@ -2224,10 +1423,10 @@
         function calcDBA() {
             const engine = document.getElementById('dba-engine').value;
             const arch = document.getElementById('dba-arch').value;
-            let price = 1000;
-            if (engine === 'sqlserver') price += 3000;
-            if (engine === 'oracle') price += 5000;
-            if (arch === 'cluster') price += 2000;
+            let price = 59;
+            if (engine === 'sqlserver') price += 149;
+            if (engine === 'oracle') price += 249;
+            if (arch === 'cluster') price += 99;
             currentPrices.dba = price;
             document.getElementById('dba-price-val').innerText = formatMoney(price);
         }
@@ -2236,11 +1435,11 @@
             const level = document.getElementById('desk-level').value;
             const users = document.getElementById('desk-users').value;
             const time = document.getElementById('desk-time').value;
-            let price = 1000;
-            if (level === 'l2') price += 500;
-            if (level === 'l3') price += 1500;
-            if (users === '200') price += 1000;
-            if (users === '500') price += 2500;
+            let price = 49;
+            if (level === 'l2') price += 29;
+            if (level === 'l3') price += 79;
+            if (users === '200') price += 49;
+            if (users === '500') price += 129;
             if (time === '24x7') price = price * 1.5;
             currentPrices.servicedesk = price;
             document.getElementById('desk-price-val').innerText = formatMoney(price);
@@ -2249,10 +1448,10 @@
         function calcSoportePC() {
             const pcs = document.getElementById('soporte-pcs').value;
             const freq = document.getElementById('soporte-freq').value;
-            let price = 800;
-            if (pcs === '50') price += 1500;
-            if (pcs === '100') price += 3500;
-            if (freq === 'mes') price += 1000;
+            let price = 39;
+            if (pcs === '50') price += 79;
+            if (pcs === '100') price += 179;
+            if (freq === 'mes') price += 49;
             currentPrices.soportepc = price;
             document.getElementById('soporte-price-val').innerText = formatMoney(price);
         }
@@ -2260,9 +1459,9 @@
         function calcM365() {
             const plan = document.getElementById('m365-plan').value;
             const qty = parseInt(document.getElementById('m365-qty').value) || 0;
-            let costPerLicense = 120;
-            if (plan === 'std') costPerLicense = 250;
-            if (plan === 'prem') costPerLicense = 440;
+            let costPerLicense = 6;
+            if (plan === 'std') costPerLicense = 12;
+            if (plan === 'prem') costPerLicense = 22;
             let price = costPerLicense * qty;
             currentPrices.m365 = price;
             document.getElementById('m365-price-val').innerText = formatMoney(price);
@@ -2271,9 +1470,9 @@
         function calcVPN() {
             const type = document.getElementById('vpn-type').value;
             const hw = document.getElementById('vpn-hw').value;
-            let price = 500;
-            if (type === 'site') price += 1000;
-            if (hw === 'yes') price += 2500;
+            let price = 29;
+            if (type === 'site') price += 49;
+            if (hw === 'yes') price += 129;
             currentPrices.vpn = price;
             document.getElementById('vpn-price-val').innerText = formatMoney(price);
         }
@@ -2281,15 +1480,15 @@
         function calcCyber() {
             const endps = document.getElementById('cyber-endpoints').value;
             const resp = document.getElementById('cyber-resp').value;
-            let price = 2000;
-            if (endps === '250') price += 4000;
-            if (endps === 'plus') price += 8000;
-            if (resp === 'remed') price += 3000;
+            let price = 99;
+            if (endps === '250') price += 199;
+            if (endps === 'plus') price += 399;
+            if (resp === 'remed') price += 149;
             currentPrices.cyber = price;
             document.getElementById('cyber-price-val').innerText = formatMoney(price);
         }
 
-        // ================== GESTIÓN DEL CARRITO ==================
+        // ================== GESTIÓN DE CONTRATACIÓN (CARRITO) ==================
         let shoppingCart = [];
 
         function getConfigText(type) {
@@ -2354,7 +1553,7 @@
             container.innerHTML = '';
 
             if (shoppingCart.length === 0) {
-                container.innerHTML = '<p style="text-align:center; color:gray; margin-top:50px;">Su orden está vacía. Configure un servicio para comenzar.</p>';
+                container.innerHTML = '<p style="text-align:center; color:gray; margin-top:50px;">Aún no has seleccionado servicios para contratar.</p>';
             } else {
                 shoppingCart.forEach(item => {
                     totalQty += item.qty;
@@ -2373,14 +1572,14 @@
                                 <input type="text" value="${item.qty}" readonly>
                                 <button onclick="changeQty('${item.id}', 1)">+</button>
                             </div>
-                            <div class="cart-item-price">$${formatMoney(itemTotal)}</div>
+                            <div class="cart-item-price">${formatMoney(itemTotal)}</div>
                         </div>
                     `;
                     container.appendChild(div);
                 });
             }
             countBadge.innerText = totalQty;
-            totalDisplay.innerText = `$${formatMoney(totalPrice)} MXN`;
+            totalDisplay.innerText = formatMoney(totalPrice);
         }
 
         function toggleCart() {
@@ -2390,7 +1589,7 @@
 
         function checkout() {
             if (shoppingCart.length === 0) {
-                alert("Seleccione al menos un servicio para generar una orden de compra.");
+                alert("Seleccione al menos un servicio para iniciar el proceso de contratación.");
                 return;
             }
             toggleCart(); 
@@ -2409,13 +1608,13 @@
                     <div class="order-summary-item">
                         <strong>${item.name} (x${item.qty})</strong>
                         Configuración: ${item.config}<br>
-                        Subtotal: $${formatMoney(subTotal)}
+                        Subtotal: ${formatMoney(subTotal)}
                     </div>
                 `;
             });
 
-            document.getElementById('modal-order-number').innerText = `Orden #${orderNum}`;
-            document.getElementById('modal-order-date').innerText = `Generada el: ${dateStr}`;
+            document.getElementById('modal-order-number').innerText = `Orden de Servicio #${orderNum}`;
+            document.getElementById('modal-order-date').innerText = `Fecha de Contratación: ${dateStr}`;
             document.getElementById('modal-order-items').innerHTML = htmlSummary;
             document.getElementById('modal-order-total').innerText = formatMoney(finalTotal);
 
@@ -2428,9 +1627,171 @@
             document.getElementById('order-modal').classList.remove('open');
             document.getElementById('cart-overlay').classList.remove('show');
             document.getElementById('cart-overlay').setAttribute('onclick', 'toggleCart()');
+            shoppingCart = []; renderCart();
+        }
+
+        // ================== LÓGICA ASISTENTE DARA MEJORADA ==================
+        
+        function toggleDara() {
+            document.getElementById('dara-window').classList.toggle('open');
+            scrollDaraToBottom();
+        }
+
+        function addDaraMsg(text, sender) {
+            const container = document.getElementById('dara-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `msg ${sender}`;
+            msgDiv.innerText = text;
+            container.appendChild(msgDiv);
+            scrollDaraToBottom();
+        }
+
+        function scrollDaraToBottom() {
+            const container = document.getElementById('dara-messages');
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // Síntesis de voz (Dara Habla)
+        function speakDara(text, callback) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); 
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'es-MX'; 
+                
+                const voices = window.speechSynthesis.getVoices();
+                const preferredVoice = voices.find(v => (v.lang.includes('es-MX') || v.lang.includes('es-ES')) && v.name.includes('Female'));
+                if (preferredVoice) {
+                    utterance.voice = preferredVoice;
+                }
+
+                utterance.rate = 1.0; 
+                utterance.pitch = 1.1; 
+
+                utterance.onend = () => {
+                    if (callback) callback();
+                };
+
+                window.speechSynthesis.speak(utterance);
+            } else {
+                if (callback) callback();
+            }
+        }
+
+        function sendDaraText() {
+            const input = document.getElementById('dara-text-input');
+            const text = input.value.trim();
+            if(text) {
+                addDaraMsg(text, 'user');
+                input.value = '';
+                setTimeout(() => procesarComandoDara(text), 400); 
+            }
+        }
+
+        let recognition = null;
+        let isListening = false;
+
+        function initDaraVoice() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+                recognition.lang = 'es-MX';
+                recognition.continuous = false; 
+                recognition.interimResults = false;
+
+                recognition.onstart = function() {
+                    isListening = true;
+                    document.getElementById('dara-mic-btn').classList.add('listening');
+                    document.getElementById('dara-status').innerText = 'Estado: Escuchando...';
+                };
+
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript;
+                    addDaraMsg(transcript, 'user');
+                    setTimeout(() => procesarComandoDara(transcript), 400);
+                };
+
+                recognition.onerror = function(event) {
+                    if(event.error === 'not-allowed') {
+                        document.getElementById('dara-status').innerText = 'Permiso denegado al micrófono.';
+                    } else {
+                        document.getElementById('dara-status').innerText = 'No se detectó audio.';
+                    }
+                };
+
+                recognition.onend = function() {
+                    isListening = false;
+                    document.getElementById('dara-mic-btn').classList.remove('listening');
+                    document.getElementById('dara-status').innerText = 'Estado: Lista para ayudarte';
+                };
+            }
+        }
+
+        function startDaraVoice() {
+            if (!recognition) initDaraVoice();
             
-            shoppingCart = [];
-            renderCart();
+            if (recognition) {
+                if (isListening) {
+                    recognition.stop();
+                } else {
+                    try {
+                        recognition.start();
+                    } catch(e) { console.log("Reconocimiento ya iniciado", e); }
+                }
+            } else {
+                addDaraMsg('Lo siento, tu navegador no soporta comandos de voz. Escribe tu petición abajo.', 'dara');
+                speakDara('Lo siento, tu navegador no soporta comandos de voz.');
+            }
+        }
+
+        // NLP en Cliente 
+        function procesarComandoDara(texto) {
+            const t = texto.toLowerCase();
+            
+            const intents = [
+                { words: ['socios', 'alianzas', 'partners'], act: () => openLanding('#socios-clientes'), res: 'Muy bien, te mostraré nuestra sección de Socios y Alianzas.' },
+                { words: ['clientes', 'empresas que confían'], act: () => openLanding('#socios-clientes'), res: 'Claro, te muestro a nuestros principales clientes.' },
+                { words: ['talento', 'joven', 'talentos', 'convocatoria', 'cv'], act: () => openLanding('#talento'), res: 'Perfecto. Redirigiendo a nuestra convocatoria de Talentos Jóvenes.' },
+                { words: ['nosotros', 'quienes somos', 'historia'], act: () => openLanding('#nosotros'), res: 'Con gusto. Aquí puedes conocer más sobre End To End Management.' },
+                { words: ['servicios', 'soluciones corporativas', 'que hacen', 'servicios de ti'], act: () => openLanding('#servicios'), res: 'Te mostraré un resumen de nuestros servicios empresariales.' },
+                { words: ['contacto', 'llamar', 'teléfono', 'correo', 'ubicación'], act: () => openLanding('#contacto'), res: 'Por supuesto, te llevo a la sección de contacto.' },
+                
+                { words: ['catálogo', 'centro de soluciones', 'marketplace', 'plataforma', 'contratar'], act: () => openPortal(), res: 'Abriendo el Centro de Soluciones de Tecnologías de la Información.' },
+                { words: ['carrito', 'orden', 'compras', 'canasta', 'pagar', 'checkout'], act: () => { if(!document.getElementById('cart-sidebar').classList.contains('open')) toggleCart(); }, res: 'Mostrando tus servicios seleccionados para contratación.' },
+                
+                { words: ['facturación', 'facturas', 'cfdi', 'electrónica'], act: () => openPortal('conf-facturacion'), res: 'Abriendo el panel para contratar Facturación Electrónica.' },
+                { words: ['proveedores', 'portal de proveedores'], act: () => openPortal('conf-portal'), res: 'Cargando las opciones para el Portal de Proveedores.' },
+                { words: ['nube', 'cloud', 'instancia', 'servidor virtual'], act: () => openPortal('conf-cloud'), res: 'Te mostraré el configurador de instancias para la Nube Privada.' },
+                { words: ['respaldo', 'backup', 'baas', 'drp', 'recuperación'], act: () => openPortal('conf-backup'), res: 'Abriendo nuestras soluciones de Respaldo de Información.' },
+                { words: ['base de datos', 'dba', 'sql', 'oracle'], act: () => openPortal('conf-dba'), res: 'Te llevo a las opciones de Administración de Bases de Datos.' },
+                { words: ['mesa de ayuda', 'service desk', 'helpdesk', 'soporte l1', 'soporte técnico especializado'], act: () => openPortal('conf-servicedesk'), res: 'Cargando el configurador de la Mesa de Servicio.' },
+                { words: ['soporte pc', 'mantenimiento pc', 'endpoints', 'laptops'], act: () => openPortal('conf-soportepc'), res: 'Abriendo los servicios de Soporte para dispositivos.' },
+                { words: ['microsoft', 'office', '365', 'correo', 'teams'], act: () => openPortal('conf-m365'), res: 'Mostrando el licenciamiento corporativo de Microsoft 365.' },
+                { words: ['vpn', 'redes', 'cisco', 'vlan'], act: () => openPortal('conf-vpn'), res: 'Abriendo las opciones de Redes y Conexiones Seguras.' },
+                { words: ['ciberseguridad', 'soc', 'edr', 'antimalware', 'seguridad'], act: () => openPortal('conf-cyber'), res: 'Te llevo directamente al servicio de Ciberseguridad Avanzada.' }
+            ];
+
+            let respondido = false;
+
+            for (let intent of intents) {
+                if (intent.words.some(word => t.includes(word))) {
+                    addDaraMsg(intent.res, 'dara');
+                    speakDara(intent.res, intent.act); 
+                    respondido = true;
+                    break;
+                }
+            }
+
+            if (!respondido) {
+                const fallbackMsg = 'No estoy segura de entender. Puedes pedirme que te lleve al Catálogo de Nube, a la sección de Socios, o pedir ver el carrito de compras.';
+                addDaraMsg(fallbackMsg, 'dara');
+                speakDara(fallbackMsg);
+            }
+        }
+        
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = () => {
+                window.speechSynthesis.getVoices(); 
+            };
         }
 
     </script>
