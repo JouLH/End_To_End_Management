@@ -7,7 +7,7 @@
     <meta name="description" content="End To End Management ofrece soluciones empresariales, administración de sistemas, nube, seguridad y software con más de 20 años de experiencia.">
     <style>
         /* ==========================================================================
-           VARIABLES & RESET
+           VARIABLES & RESET - SIN MODIFICACIONES
            ========================================================================== */
         :root {
             --primary-color: #0A192F;
@@ -344,7 +344,7 @@
         }
 
         /* ==========================================================================
-           ASISTENTE VIRTUAL DARA
+           ASISTENTE VIRTUAL DARA (MEJORADO - DESDE p.html)
            ========================================================================== */
         .dara-float-btn {
             position: fixed; bottom: 30px; left: 30px; background: linear-gradient(135deg, #00E5FF 0%, #0066FF 100%);
@@ -361,8 +361,8 @@
         .dara-float-btn svg { width: 24px; height: 24px; fill: currentColor; }
 
         .dara-window {
-            position: fixed; bottom: 100px; left: 30px; width: 350px; height: 500px; background: var(--bg-white);
-            border-radius: 12px; box-shadow: var(--shadow-lg); z-index: 1004; display: flex; flex-direction: column;
+            position: fixed; bottom: 100px; left: 30px; width: 380px; height: 550px; background: var(--bg-white);
+            border-radius: 16px; box-shadow: var(--shadow-lg); z-index: 1004; display: flex; flex-direction: column;
             overflow: hidden; border: 1px solid var(--portal-border); opacity: 0; pointer-events: none;
             transform: translateY(20px); transition: all 0.3s ease;
         }
@@ -391,9 +391,9 @@
 
         @keyframes pulse-mic {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-            100% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
         }
-        .dara-status { font-size: 0.75rem; color: var(--text-light); text-align: center; height: 15px; font-weight: 600;}
+        .dara-status { font-size: 0.75rem; color: var(--text-light); text-align: center; padding: 5px; background: #E2E8F0; font-weight: 600;}
 
         @media (max-width: 768px) {
             .dara-window { width: 90%; left: 5%; bottom: 90px; height: 60vh; }
@@ -700,7 +700,7 @@
             <div class="container talents-grid">
                 <div class="talent-image-wrapper fade-up">
                     <div class="image-placeholder-container">
-                        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10-5 10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
                         <small style="display:block; margin-top:5px; opacity:0.6;">Tamaño sugerido: 550x500px</small>
                         <img src="img/talentos.jpg" alt="">
                     </div>
@@ -790,7 +790,7 @@
 
           <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; align-items: flex-start;">
 
-            <!-- TWEET 1 — Cliente satisfecho -->
+            <!-- TWEET 1 -->
             <blockquote class="twitter-tweet">
               <p lang="es" dir="ltr">😌 La mejor llamada con un vendedor de TI es la que nunca tuviste que hacer. <br>Entra. Explora. Configura. <br>Tú decides cuántos usuarios. <br>Tú decides Linux o Windows. <br>Tú decides cuánto almacenamiento.<br> Tú ves el precio en tiempo real. Tú generas tu orden.
               <a href="https://x.com/hashtag/MakeITReal?src=hash&amp;ref_src=twsrc%5Etfw">#MakeITReal</a> 
@@ -800,7 +800,7 @@
               <a href="https://x.com/EjemploENDtoEND/status/2064053892657078339?ref_src=twsrc%5Etfw">June 8, 2026</a>
             </blockquote>
 
-            <!-- TWEET 2 — Amazon de TI -->
+            <!-- TWEET 2 -->
             <blockquote class="twitter-tweet" data-media-max-width="560">
               <p lang="es" dir="ltr">💡 ¿Qué pasaría si comprar tecnología empresarial<br>fuera tan fácil como comprar en Amazon?<br>Entra. Elige tus servicios.<br>→ Facturación<br>→ Ciberseguridad<br>→ Nube Privada<br>→ Soporte Técnico<br>→ ERP, y más...<br>El precio se actualiza solo.<br>Sin llamadas. Sin vendedores. Sin esperas.  
               <a href="https://t.co/yruzKxxqvv">pic.twitter.com/yruzKxxqvv</a></p>
@@ -1399,7 +1399,7 @@
         </div>
     </div>
 
-    <!-- ================== COMPONENTES DARA ================== -->
+    <!-- ================== COMPONENTES DARA (MEJORADO - DESDE p.html) ================== -->
     <!-- Botón flotante Dara -->
     <div class="dara-float-btn" onclick="toggleDaraUI()">
         <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
@@ -1418,7 +1418,7 @@
         <div class="dara-messages" id="dara-messages">
             <div class="msg dara">¡Hola! Soy Dara, tu asistente virtual en End To End Management. ¿En qué puedo apoyarte hoy?</div>
         </div>
-        <div class="dara-status" id="dara-status">Estado: En pausa</div>
+        <div class="dara-status" id="dara-status">Estado: Lista para ayudarte</div>
         <div class="dara-input-area">
             <div class="dara-input-controls">
                 <input type="text" id="dara-text-input" class="dara-input" placeholder="Escribe o usa el micrófono..." onkeypress="if(event.key === 'Enter') sendDaraText()">
@@ -1435,7 +1435,7 @@
     <!-- Script de X — Se carga de forma global una sola vez -->
     <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 
-    <!-- ================== JAVASCRIPT PURO ================== -->
+    <!-- ================== JAVASCRIPT PURO (incluye lógica completa desde p.html + nuevas capacidades) ================== -->
     <script>
         // ================== NAVEGACIÓN Y VISTAS ==================
         const landingView = document.getElementById('landing-view');
@@ -1487,7 +1487,6 @@
             socialView.style.display = 'flex';
             window.scrollTo(0, 0);
             
-            // Forzar renderizado de widgets de X si es necesario
             if(window.twttr && window.twttr.widgets) {
                 window.twttr.widgets.load();
             }
@@ -1534,6 +1533,8 @@
             fadeElements.forEach(element => { observer.observe(element); });
             
             calcAll();
+            
+            initDaraVoice();
         });
 
         // ================== LÓGICA DE PRECIOS DEL PORTAL (USD) ==================
@@ -1808,10 +1809,25 @@
             shoppingCart = []; renderCart();
         }
 
-        // ================== LÓGICA ASISTENTE DARA MEJORADA ==================
-        
+        // ================== LÓGICA ASISTENTE DARA MEJORADA (DESDE p.html + nuevos comandos) ==================
+        let daraRecognition = null;
+        let daraIsListening = false;
+        let daraShouldRestart = true;
+        let micPermissionGranted = false;
+
         function toggleDaraUI() {
-            document.getElementById('dara-window').classList.toggle('open');
+            const win = document.getElementById('dara-window');
+            const wasOpen = win.classList.contains('open');
+            win.classList.toggle('open');
+            if (!wasOpen && win.classList.contains('open')) {
+                if (micPermissionGranted && daraRecognition && !daraIsListening) {
+                    startDaraVoice();
+                }
+            } else if (wasOpen && !win.classList.contains('open')) {
+                if (daraIsListening) {
+                    stopDaraVoice();
+                }
+            }
             scrollDaraToBottom();
         }
 
@@ -1829,29 +1845,28 @@
             container.scrollTop = container.scrollHeight;
         }
 
-        // Síntesis de voz (Dara Habla)
         function speakDara(text, callback) {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel(); 
                 const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'es-MX'; 
-                
-                const voices = window.speechSynthesis.getVoices();
-                const preferredVoice = voices.find(v => (v.lang.includes('es-MX') || v.lang.includes('es-ES')) && v.name.includes('Female'));
-                if (preferredVoice) {
-                    utterance.voice = preferredVoice;
-                }
-
-                utterance.rate = 1.0; 
-                utterance.pitch = 1.1; 
-
-                utterance.onend = () => {
-                    if (callback) callback();
-                };
-
+                utterance.lang = 'es-MX';
+                utterance.rate = 0.95;
+                utterance.pitch = 1.1;
+                utterance.onend = () => { if (callback) callback(); };
                 window.speechSynthesis.speak(utterance);
             } else {
                 if (callback) callback();
+            }
+        }
+
+        function setDaraStatus(status, isListeningActive = false) {
+            const statusDiv = document.getElementById('dara-status');
+            statusDiv.innerText = `Estado: ${status}`;
+            const micBtn = document.getElementById('dara-mic-btn');
+            if (isListeningActive) {
+                micBtn.classList.add('listening');
+            } else {
+                micBtn.classList.remove('listening');
             }
         }
 
@@ -1861,108 +1876,220 @@
             if(text) {
                 addDaraMsg(text, 'user');
                 input.value = '';
-                setTimeout(() => procesarComandoDara(text), 400); 
+                setDaraStatus('Procesando...');
+                setTimeout(() => procesarComandoDara(text), 100);
             }
         }
-
-        let recognition = null;
-        let isListening = false;
 
         function initDaraVoice() {
             if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
                 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-                recognition = new SpeechRecognition();
-                recognition.lang = 'es-MX';
-                recognition.continuous = false; 
-                recognition.interimResults = false;
+                daraRecognition = new SpeechRecognition();
+                daraRecognition.lang = 'es-MX';
+                daraRecognition.continuous = true;
+                daraRecognition.interimResults = false;
+                daraRecognition.maxAlternatives = 1;
 
-                recognition.onstart = function() {
-                    isListening = true;
-                    document.getElementById('dara-mic-btn').classList.add('listening');
-                    document.getElementById('dara-status').innerText = 'Estado: Escuchando...';
+                daraRecognition.onstart = function() {
+                    daraIsListening = true;
+                    setDaraStatus('Escuchando...', true);
                 };
 
-                recognition.onresult = function(event) {
-                    const transcript = event.results[0][0].transcript;
-                    addDaraMsg(transcript, 'user');
-                    setTimeout(() => procesarComandoDara(transcript), 400);
-                };
-
-                recognition.onerror = function(event) {
-                    if(event.error === 'not-allowed') {
-                        document.getElementById('dara-status').innerText = 'Permiso denegado al micrófono.';
-                    } else {
-                        document.getElementById('dara-status').innerText = 'No se detectó audio.';
+                daraRecognition.onresult = function(event) {
+                    let finalTranscript = '';
+                    for (let i = event.resultIndex; i < event.results.length; i++) {
+                        if (event.results[i].isFinal) {
+                            finalTranscript += event.results[i][0].transcript;
+                        }
+                    }
+                    if (finalTranscript) {
+                        addDaraMsg(finalTranscript, 'user');
+                        setDaraStatus('Procesando...');
+                        procesarComandoDara(finalTranscript);
                     }
                 };
 
-                recognition.onend = function() {
-                    isListening = false;
-                    document.getElementById('dara-mic-btn').classList.remove('listening');
-                    document.getElementById('dara-status').innerText = 'Estado: Lista para ayudarte';
+                daraRecognition.onerror = function(event) {
+                    if (event.error === 'not-allowed') {
+                        micPermissionGranted = false;
+                        setDaraStatus('Permiso denegado al micrófono. Actívalo manualmente.');
+                        daraIsListening = false;
+                    } else if (event.error === 'no-speech') {
+                        setDaraStatus('No se detectó voz. Intenta de nuevo.');
+                        if (daraShouldRestart && micPermissionGranted) {
+                            setTimeout(() => { if (!daraIsListening && micPermissionGranted && document.getElementById('dara-window').classList.contains('open')) startDaraVoice(); }, 500);
+                        }
+                    } else {
+                        setDaraStatus('Error de voz. Reiniciando...');
+                        if (daraShouldRestart && micPermissionGranted) {
+                            setTimeout(() => { if (!daraIsListening && micPermissionGranted && document.getElementById('dara-window').classList.contains('open')) startDaraVoice(); }, 1000);
+                        }
+                    }
                 };
+
+                daraRecognition.onend = function() {
+                    daraIsListening = false;
+                    setDaraStatus('Lista para ayudarte', false);
+                    if (daraShouldRestart && micPermissionGranted && document.getElementById('dara-window').classList.contains('open')) {
+                        setTimeout(() => {
+                            if (!daraIsListening && micPermissionGranted && document.getElementById('dara-window').classList.contains('open')) {
+                                startDaraVoice();
+                            }
+                        }, 800);
+                    }
+                };
+            } else {
+                setDaraStatus('Tu navegador no soporta reconocimiento de voz.');
+                document.getElementById('dara-mic-btn').style.display = 'none';
             }
+        }
+
+        function requestMicrophonePermission() {
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                setDaraStatus('API de micrófono no soportada.');
+                return false;
+            }
+            return navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    stream.getTracks().forEach(track => track.stop());
+                    micPermissionGranted = true;
+                    setDaraStatus('Permiso concedido. ¡Puedes usar el micrófono!');
+                    if (!daraRecognition) initDaraVoice();
+                    startDaraVoice();
+                    return true;
+                })
+                .catch(err => {
+                    micPermissionGranted = false;
+                    setDaraStatus('No se pudo acceder al micrófono. Revisa los permisos.');
+                    console.error('Error micrófono:', err);
+                    return false;
+                });
         }
 
         function startDaraVoice() {
-            if (!recognition) initDaraVoice();
-            
-            if (recognition) {
-                if (isListening) {
-                    recognition.stop();
-                } else {
-                    try {
-                        recognition.start();
-                    } catch(e) { console.log("Reconocimiento ya iniciado", e); }
-                }
-            } else {
-                addDaraMsg('Lo siento, tu navegador no soporta comandos de voz. Escribe tu petición abajo.', 'dara');
-                speakDara('Lo siento, tu navegador no soporta comandos de voz.');
+            if (!daraRecognition) initDaraVoice();
+            if (daraRecognition && !daraIsListening && micPermissionGranted) {
+                try {
+                    daraRecognition.start();
+                } catch(e) { console.log("Error al iniciar reconocimiento:", e); }
+            } else if (!micPermissionGranted) {
+                setDaraStatus('Haz clic en el micrófono para conceder permisos.');
             }
         }
 
-        // NLP en Cliente 
-        function procesarComandoDara(texto) {
-            const t = texto.toLowerCase();
+        function stopDaraVoice() {
+            if (daraRecognition && daraIsListening) {
+                daraRecognition.stop();
+            }
+        }
+
+        function toggleDaraMic() {
+            if (!micPermissionGranted) {
+                requestMicrophonePermission().then(granted => {
+                    if (!granted) {
+                        setDaraStatus('Permiso de micrófono requerido para usar voz.');
+                    }
+                });
+            } else {
+                if (daraIsListening) {
+                    stopDaraVoice();
+                    daraShouldRestart = false;
+                    setDaraStatus('Micrófono desactivado', false);
+                    setTimeout(() => { daraShouldRestart = true; }, 1000);
+                } else {
+                    daraShouldRestart = true;
+                    startDaraVoice();
+                }
+            }
+        }
+
+        // Función auxiliar para agregar servicio al carrito desde voz
+        function detectAndAddServiceFromVoice(text) {
+            const lowerText = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             
-            const intents = [
-                { words: ['socios', 'alianzas', 'partners'], act: () => openLanding('#socios-clientes'), res: 'Muy bien, te mostraré nuestra sección de Socios y Alianzas.' },
-                { words: ['clientes', 'empresas que confían'], act: () => openLanding('#socios-clientes'), res: 'Claro, te muestro a nuestros principales clientes.' },
-                { words: ['talento', 'joven', 'talentos', 'convocatoria', 'cv'], act: () => openLanding('#talento'), res: 'Perfecto. Redirigiendo a nuestra convocatoria de Talentos Jóvenes.' },
-                { words: ['nosotros', 'quienes somos', 'historia'], act: () => openLanding('#nosotros'), res: 'Con gusto. Aquí puedes conocer más sobre End To End Management.' },
-                { words: ['servicios', 'soluciones corporativas', 'que hacen', 'servicios de ti'], act: () => openLanding('#servicios'), res: 'Te mostraré un resumen de nuestros servicios empresariales.' },
-                { words: ['contacto', 'llamar', 'teléfono', 'correo', 'ubicación'], act: () => openLanding('#contacto'), res: 'Por supuesto, te llevo a la sección de contacto.' },
-                
-                { words: ['catálogo', 'centro de soluciones', 'marketplace', 'plataforma', 'contratar', 'llevame al centro de soluciones ti', 'llévame al centro de soluciones ti', 'llévame al centro de soluciones', 'llevame al centro de soluciones'], act: () => openPortal(), res: 'Abriendo el Centro de Soluciones de Tecnologías de la Información.' },
-                { words: ['carrito', 'orden', 'compras', 'canasta', 'pagar', 'checkout'], act: () => { if(!document.getElementById('cart-sidebar').classList.contains('open')) toggleCart(); }, res: 'Mostrando tus servicios seleccionados para contratación.' },
-                
-                { words: ['facturación', 'facturas', 'cfdi', 'electrónica'], act: () => openPortal('conf-facturacion'), res: 'Abriendo el panel para contratar Facturación Electrónica.' },
-                { words: ['proveedores', 'portal de proveedores'], act: () => openPortal('conf-portal'), res: 'Cargando las opciones para el Portal de Proveedores.' },
-                { words: ['nube', 'cloud', 'instancia', 'servidor virtual'], act: () => openPortal('conf-cloud'), res: 'Te mostraré el configurador de instancias para la Nube Privada.' },
-                { words: ['respaldo', 'backup', 'baas', 'drp', 'recuperación'], act: () => openPortal('conf-backup'), res: 'Abriendo nuestras soluciones de Respaldo de Información.' },
-                { words: ['base de datos', 'dba', 'sql', 'oracle'], act: () => openPortal('conf-dba'), res: 'Te llevo a las opciones de Administración de Bases de Datos.' },
-                { words: ['mesa de ayuda', 'service desk', 'helpdesk', 'soporte l1', 'soporte técnico especializado'], act: () => openPortal('conf-servicedesk'), res: 'Cargando el configurador de la Mesa de Servicio.' },
-                { words: ['soporte pc', 'mantenimiento pc', 'endpoints', 'laptops'], act: () => openPortal('conf-soportepc'), res: 'Abriendo los servicios de Soporte para dispositivos.' },
-                { words: ['microsoft', 'office', '365', 'correo', 'teams'], act: () => openPortal('conf-m365'), res: 'Mostrando el licenciamiento corporativo de Microsoft 365.' },
-                { words: ['vpn', 'redes', 'cisco', 'vlan'], act: () => openPortal('conf-vpn'), res: 'Abriendo las opciones de Redes y Conexiones Seguras.' },
-                { words: ['ciberseguridad', 'soc', 'edr', 'antimalware', 'seguridad'], act: () => openPortal('conf-cyber'), res: 'Te llevo directamente al servicio de Ciberseguridad Avanzada.' }
+            // Mapeo de palabras clave a (nombre_servicio, tipo)
+            const serviceMap = [
+                { keywords: ["facturación", "factura electronica", "cfdi"], name: "Facturación Electrónica", type: "fact" },
+                { keywords: ["portal de proveedores", "portal proveedores", "proveedores"], name: "Portal de Proveedores", type: "portal" },
+                { keywords: ["ete cloud", "instancia cloud", "servidor virtual", "nube privada"], name: "Instancia ETE Cloud", type: "cloud" },
+                { keywords: ["backup", "baas", "respaldo de información", "drp"], name: "Backup as a Service (BaaS)", type: "baas" },
+                { keywords: ["dba", "base de datos", "administración de bases de datos"], name: "Servicio DBA Gestionado", type: "dba" },
+                { keywords: ["mesa de servicio", "service desk", "helpdesk", "soporte técnico especializado"], name: "Mesa de Servicio TI", type: "servicedesk" },
+                { keywords: ["soporte endpoints", "soporte pc", "mantenimiento de pc"], name: "Soporte Endpoints (PC/Laptop)", type: "soportepc" },
+                { keywords: ["microsoft 365", "office 365", "licencias microsoft", "correo empresarial"], name: "Licenciamiento Microsoft 365", type: "m365" },
+                { keywords: ["vpn", "redes", "conexión segura", "cisco"], name: "Redes y VPN Empresarial", type: "vpn" },
+                { keywords: ["ciberseguridad", "soc", "edr", "antimalware"], name: "Ciberseguridad SOC / EDR", type: "cyber" }
             ];
 
+            for (let service of serviceMap) {
+                if (service.keywords.some(kw => lowerText.includes(kw))) {
+                    addServiceToCart(service.name, service.type);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Mapa de intents ampliado (incluye comandos de servicios, carrito, campañas, talentos, etc.)
+        const intentMap = [
+            // Comandos de navegación general (ya existentes)
+            { keywords: ['inicio', 'ir al inicio', 'regresar al inicio', 'volver arriba', 'página principal', 'home'], action: () => openLanding('#hero'), response: 'Volviendo al inicio de la página.' },
+            { keywords: ['menú principal', 'navegación principal', 'mostrar menú', 'abrir menú'], action: () => { document.querySelector('.hamburger')?.click(); }, response: 'Abriendo el menú de navegación.' },
+            { keywords: ['nosotros', 'quienes somos', 'conoce la empresa', 'háblame de la empresa', 'ir a nosotros', 'sobre nosotros', 'nuestra empresa', 'acerca de'], action: () => openLanding('#nosotros'), response: 'Mostrando información sobre nosotros.' },
+            { keywords: ['socios', 'muéstrame los socios', 'ver socios', 'enséñame los socios', 'alianzas', 'socios tecnológicos'], action: () => openLanding('#socios-clientes'), response: 'Aquí puedes ver nuestros socios tecnológicos.' },
+            { keywords: ['clientes', 'ver clientes', 'muéstrame los clientes', 'enséñame los clientes', 'empresas que confían'], action: () => openLanding('#socios-clientes'), response: 'Estos son algunos de nuestros clientes.' },
+            { keywords: ['talentos jóvenes', 'talento joven', 'mostrar convocatoria', 'ver convocatoria', 'háblame de talentos jóvenes', 'convocatoria talento', 'programa jóvenes', 'quiero conocer el programa de talentos jóvenes'], action: () => openLanding('#talento'), response: 'Abriendo la sección de Talentos Jóvenes.' },
+            { keywords: ['servicios', 'mostrar servicios', 'qué servicios ofrecen', 'ir a servicios', 'ver servicios', 'catálogo de servicios', 'qué puedo contratar', 'qué soluciones tienen'], action: () => { 
+                const msg = 'Ofrecemos soluciones en: Facturación Electrónica, Portal de Proveedores, Instancias Cloud, Backup y DRP, Administración DBA, Mesa de Servicio, Soporte Endpoints, Microsoft 365, Redes y VPN, y Ciberseguridad SOC. Puedes pedirme que agregue cualquiera de ellos al carrito.';
+                addDaraMsg(msg, 'dara');
+                speakDara(msg);
+                openLanding('#servicios');
+            }, response: '' },
+            { keywords: ['centro de soluciones ti', 'contratar servicios', 'comprar servicios', 'abrir catálogo', 'marketplace ti', 'plataforma de contratación', 'portal de soluciones'], action: () => openPortal(), response: 'Abriendo el Centro de Soluciones TI.' },
+            { keywords: ['carrito', 'abrir carrito', 'mostrar carrito', 'qué tengo en el carrito', 'ir al carrito', 'ver mi carrito', 'canasta de compras'], action: () => { if(!document.getElementById('cart-sidebar').classList.contains('open')) toggleCart(); }, response: 'Mostrando tu carrito de servicios.' },
+            { keywords: ['campañas', 'abrir campañas', 'ver publicaciones', 'mostrar actividad en x', 'campañas en x', 'twitter', 'redes sociales', 'ver campañas en x', 'mostrar campañas', 'quiero ver las campañas', 'mostrar publicaciones', 'ver publicaciones de x', 'ir a campañas', 'llévame a campañas'], action: () => openSocialView(), response: 'Abriendo nuestras campañas en X.' },
+            { keywords: ['contacto', 'ir a contacto', 'mostrar contacto', 'cómo los contacto', 'contactar', 'información de contacto'], action: () => openLanding('#contacto'), response: 'Aquí puedes contactarnos.' },
+            
+            // Comandos para agregar servicios al carrito (acción personalizada)
+            { keywords: ['agrega', 'contrata', 'comprar', 'añade', 'quiero contratar', 'agregar al carrito', 'comprar este servicio'], action: (text) => {
+                const success = detectAndAddServiceFromVoice(text);
+                if (!success) {
+                    const errorMsg = 'No he entendido qué servicio deseas contratar. Por favor, especifica el nombre: Facturación Electrónica, Portal de Proveedores, Instancia ETE Cloud, Backup, DBA, Mesa de Servicio, Soporte Endpoints, Microsoft 365, VPN o Ciberseguridad.';
+                    addDaraMsg(errorMsg, 'dara');
+                    speakDara(errorMsg);
+                }
+            }, response: '' } // la respuesta se maneja dentro de la acción
+        ];
+
+        function procesarComandoDara(texto) {
+            const t = texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             let respondido = false;
 
-            for (let intent of intents) {
-                if (intent.words.some(word => t.includes(word))) {
-                    addDaraMsg(intent.res, 'dara');
-                    speakDara(intent.res, intent.act); 
+            for (let intent of intentMap) {
+                // Verificar si alguna keyword coincide
+                if (intent.keywords.some(kw => t.includes(kw.toLowerCase()))) {
+                    // Si la acción necesita el texto original (para comandos de agregar), se lo pasamos
+                    if (intent.action.length === 1) {
+                        intent.action(texto);
+                    } else {
+                        intent.action();
+                    }
+                    // Si hay una respuesta predefinida, mostrarla (excepto cuando la acción ya mostró un mensaje)
+                    if (intent.response) {
+                        addDaraMsg(intent.response, 'dara');
+                        setDaraStatus('Respondiendo...');
+                        speakDara(intent.response, () => { setDaraStatus('Lista para ayudarte'); });
+                    }
                     respondido = true;
                     break;
                 }
             }
 
             if (!respondido) {
-                const fallbackMsg = 'No estoy segura de entender. Puedes pedirme que te lleve al Catálogo de Nube, a la sección de Socios, o pedir ver el carrito de compras.';
+                const fallbackMsg = 'No estoy segura de entender. Puedes pedirme que te lleve al catálogo, ver socios, talentos jóvenes, campañas en X, o mostrar el carrito. También puedes decir "agrega facturación electrónica al carrito".';
                 addDaraMsg(fallbackMsg, 'dara');
-                speakDara(fallbackMsg);
+                setDaraStatus('Respondiendo...');
+                speakDara(fallbackMsg, () => { setDaraStatus('Lista para ayudarte'); });
             }
         }
         
@@ -1971,7 +2098,6 @@
                 window.speechSynthesis.getVoices(); 
             };
         }
-
     </script>
 </body>
 </html>
